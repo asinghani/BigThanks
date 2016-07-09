@@ -1,7 +1,7 @@
 export default function () {
   FlowRouter.route('/', {
     action() {
-      BlazeLayout.render('basicLayout', {
+      BlazeLayout.render('template', {
         content: 'home'
       });
     }

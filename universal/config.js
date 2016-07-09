@@ -1,4 +1,4 @@
 export default {
-  name: 'Meteor Boilerplate',
-  description: 'A boilerplate for meteorjs projects http://matteodem.github.io/meteor-boilerplate/'
+  name: 'Big Thanks',
+  description: 'A system which helps encourage citizens to do volunteer work using a credit system which allows them to earn rewards.'
 };

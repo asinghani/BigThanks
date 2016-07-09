@@ -29,9 +29,11 @@ spacebars
 check
 reactive-dict
 
+autopublish
+insecure
+
 # Community Packages
 
-flemay:less-autoprefixer
 aldeed:collection2
 kadira:flow-router
 kadira:blaze-layout
@@ -45,3 +47,7 @@ semantic:ui-css
 standard-minifier-css
 standard-minifier-js
 simple:dev-error-overlay
+babrahams:constellation
+fortawesome:fontawesome
+alanning:roles
+yogiben:pretty-email
