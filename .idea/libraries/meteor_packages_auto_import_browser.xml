@@ -3,15 +3,19 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_sep.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/client/subscriptions.js" />
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/router.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_message.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/client/uiHelpers.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/web.browser/stringify.js" />
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/group.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/client/debug.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/web.browser/ejson.js" />
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/_init.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_pwd_form.js" />
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/triggers.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_nav_button.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/roles_common.js" />
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/route.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_pwd_form_btn.js" />
         <item url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/test/client/_helpers.js" />
@@ -331,6 +335,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/ru.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/ro.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/fa.coffee" />
+        <item url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.5.0/web.browser/upstream/css/font-awesome.css" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/cs.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/pl.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/de.coffee" />
@@ -346,6 +351,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/kadira_blaze-layout/2.3.0/web.browser/lib/client/layout.js" />
         <item url="file://$USER_HOME$/.meteor/packages/diff-sequence/1.0.4/web.browser/diff.js" />
         <item url="file://$USER_HOME$/.meteor/packages/u2622_persistent-session/0.4.4/web.browser/lib/persistent_session.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/cmather_handlebars-server/2.0.0/web.browser/packages/cmather:handlebars-server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/web.browser/runtime-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/web.browser/runtime.js" />
         <item url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/methods.js" />
@@ -361,15 +367,19 @@
     </properties>
     <CLASSES>
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_sep.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/client/subscriptions.js" />
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/router.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_message.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/client/uiHelpers.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/web.browser/stringify.js" />
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/group.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/client/debug.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/web.browser/ejson.js" />
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/_init.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_pwd_form.js" />
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/triggers.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_nav_button.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.browser/roles_common.js" />
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/client/route.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/templates_helpers/at_pwd_form_btn.js" />
       <root url="file://$USER_HOME$/.meteor/packages/kadira_flow-router/2.11.0/web.browser/test/client/_helpers.js" />
@@ -689,6 +699,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/ru.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/ro.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/fa.coffee" />
+      <root url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.5.0/web.browser/upstream/css/font-awesome.css" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/cs.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/pl.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/web.browser/t9n/de.coffee" />
@@ -704,6 +715,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/kadira_blaze-layout/2.3.0/web.browser/lib/client/layout.js" />
       <root url="file://$USER_HOME$/.meteor/packages/diff-sequence/1.0.4/web.browser/diff.js" />
       <root url="file://$USER_HOME$/.meteor/packages/u2622_persistent-session/0.4.4/web.browser/lib/persistent_session.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/cmather_handlebars-server/2.0.0/web.browser/packages/cmather:handlebars-server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/web.browser/runtime-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/web.browser/runtime.js" />
       <root url="file://$USER_HOME$/.meteor/packages/useraccounts_core/1.13.1/web.browser/lib/methods.js" />

@@ -290,6 +290,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/client.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/css.js" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/buffer.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.5.0/web.cordova/upstream/css/font-awesome.css" />
         <item url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/dburles_collection-helpers/1.0.4/web.cordova/collection-helpers.js" />
         <item url="file://$USER_HOME$/.meteor/packages/dburles_mongo-collection-instances/0.3.5/web.cordova/mongo-instances.js" />
@@ -352,12 +353,17 @@
         <item url="file://$USER_HOME$/.meteor/packages/reactive-dict/1.1.6/web.cordova/reactive-dict.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reactive-dict/1.1.6/web.cordova/migration.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reactive-var/1.0.8/web.cordova/reactive-var.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/cmather_handlebars-server/2.0.0/web.cordova/packages/cmather:handlebars-server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reload/1.1.7/web.cordova/deprecated.js" />
         <item url="file://$USER_HOME$/.meteor/packages/u2622_persistent-session/0.4.4/web.cordova/lib/persistent_session.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reload/1.1.7/web.cordova/reload.js" />
         <item url="file://$USER_HOME$/.meteor/packages/retry/1.0.6/web.cordova/retry.js" />
         <item url="file://$USER_HOME$/.meteor/packages/service-configuration/1.0.8/web.cordova/service_configuration_common.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/client/subscriptions.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/client/uiHelpers.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/client/debug.js" />
         <item url="file://$USER_HOME$/.meteor/packages/session/1.1.4/web.cordova/session.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/roles_common.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -649,6 +655,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/client.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/css.js" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/buffer.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.5.0/web.cordova/upstream/css/font-awesome.css" />
       <root url="file://$USER_HOME$/.meteor/packages/modules/0.5.2/web.cordova/server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/dburles_collection-helpers/1.0.4/web.cordova/collection-helpers.js" />
       <root url="file://$USER_HOME$/.meteor/packages/dburles_mongo-collection-instances/0.3.5/web.cordova/mongo-instances.js" />
@@ -711,12 +718,17 @@
       <root url="file://$USER_HOME$/.meteor/packages/reactive-dict/1.1.6/web.cordova/reactive-dict.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reactive-dict/1.1.6/web.cordova/migration.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reactive-var/1.0.8/web.cordova/reactive-var.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/cmather_handlebars-server/2.0.0/web.cordova/packages/cmather:handlebars-server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reload/1.1.7/web.cordova/deprecated.js" />
       <root url="file://$USER_HOME$/.meteor/packages/u2622_persistent-session/0.4.4/web.cordova/lib/persistent_session.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reload/1.1.7/web.cordova/reload.js" />
       <root url="file://$USER_HOME$/.meteor/packages/retry/1.0.6/web.cordova/retry.js" />
       <root url="file://$USER_HOME$/.meteor/packages/service-configuration/1.0.8/web.cordova/service_configuration_common.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/client/subscriptions.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/client/uiHelpers.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/client/debug.js" />
       <root url="file://$USER_HOME$/.meteor/packages/session/1.1.4/web.cordova/session.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/alanning_roles/1.2.15/web.cordova/roles_common.js" />
     </CLASSES>
     <SOURCES />
   </library>
