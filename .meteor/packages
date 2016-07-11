@@ -43,8 +43,6 @@ dburles:collection-helpers
 meteorhacks:fast-render
 johnantoni:meteor-normalize
 ostrio:templatehelpers
-semantic:ui-css
-standard-minifier-css
 standard-minifier-js
 simple:dev-error-overlay
 babrahams:constellation
@@ -58,3 +56,8 @@ zimme:active-route
 useraccounts:core
 accounts-ui
 email
+meteortoys:allthings
+twbs:bootstrap
+semantic:ui-css
+seba:minifiers-autoprefixer
+fourseven:scss

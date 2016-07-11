@@ -8,6 +8,7 @@ export default function () {
         },
         name: "home"
     });
+    
     AccountsTemplates.configureRoute("changePwd");
     AccountsTemplates.configureRoute("forgotPwd");
     AccountsTemplates.configureRoute("resetPwd");
