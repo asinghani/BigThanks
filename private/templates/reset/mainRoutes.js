@@ -1,9 +1,9 @@
 // { "path" : "universal/routes/mainRoutes.js" }
 export default function () {
-  FlowRouter.route('/', {
+  FlowRouter.route("/", {
     action() {
-      BlazeLayout.render('basicLayout', {
-        content: 'home'
+      BlazeLayout.render("basicLayout", {
+        content: "home"
       });
     }
   });

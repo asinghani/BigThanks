@@ -65,6 +65,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_schema-deny/1.0.1/os/lib/deny.js" />
         <item url="file://$USER_HOME$/.meteor/packages/allow-deny/1.0.3/os/allow-deny.js" />
         <item url="file://$USER_HOME$/.meteor/packages/allow-deny/1.0.3/os/allow-deny-tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/zimme_active-route/2.3.2/os/packages/zimme_active-route.js" />
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_schema-index/1.0.1/os/lib/indexing.js" />
         <item url="file://$USER_HOME$/.meteor/packages/autoupdate/1.2.7/os/autoupdate_server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.6.1/os/babel.js" />
@@ -81,6 +82,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/aldeed_simple-schema/1.5.3/os/simple-schema-context.js" />
         <item url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.7/os/min-max-heap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.7/os/min-heap.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/useraccounts_flow-routing/1.13.1/os/lib/core.js" />
         <item url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.7/os/max-heap.js" />
         <item url="file://$USER_HOME$/.meteor/packages/blaze/2.1.6/os/view.js" />
         <item url="file://$USER_HOME$/.meteor/packages/blaze/2.1.6/os/lookup.js" />
@@ -143,6 +145,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript/0.4.2/os/ecmascript.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/os/runtime-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/os/runtime.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/arillo_flow-router-helpers/0.5.2/os/client/helpers.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/os/stringify.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/os/ejson.js" />
         <item url="file://$USER_HOME$/.meteor/packages/email/1.0.11/os/email.js" />
@@ -173,6 +176,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/http/1.1.4/os/httpcall_client.js" />
         <item url="file://$USER_HOME$/.meteor/packages/constellation_plugins/0.4.3/os/constellation-plugins-server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/id-map/1.0.6/os/id-map.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/sacha_spin/2.3.1/os/packages/sacha_spin.js" />
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.7/os/jquery.js" />
         <item url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/os/t9n.coffee" />
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.7/os/main.js" />
@@ -335,6 +339,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_schema-deny/1.0.1/os/lib/deny.js" />
       <root url="file://$USER_HOME$/.meteor/packages/allow-deny/1.0.3/os/allow-deny.js" />
       <root url="file://$USER_HOME$/.meteor/packages/allow-deny/1.0.3/os/allow-deny-tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/zimme_active-route/2.3.2/os/packages/zimme_active-route.js" />
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_schema-index/1.0.1/os/lib/indexing.js" />
       <root url="file://$USER_HOME$/.meteor/packages/autoupdate/1.2.7/os/autoupdate_server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-compiler/6.6.1/os/babel.js" />
@@ -351,6 +356,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/aldeed_simple-schema/1.5.3/os/simple-schema-context.js" />
       <root url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.7/os/min-max-heap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.7/os/min-heap.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/useraccounts_flow-routing/1.13.1/os/lib/core.js" />
       <root url="file://$USER_HOME$/.meteor/packages/binary-heap/1.0.7/os/max-heap.js" />
       <root url="file://$USER_HOME$/.meteor/packages/blaze/2.1.6/os/view.js" />
       <root url="file://$USER_HOME$/.meteor/packages/blaze/2.1.6/os/lookup.js" />
@@ -413,6 +419,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript/0.4.2/os/ecmascript.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/os/runtime-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ecmascript-runtime/0.2.9/os/runtime.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/arillo_flow-router-helpers/0.5.2/os/client/helpers.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/os/stringify.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ejson/1.0.10/os/ejson.js" />
       <root url="file://$USER_HOME$/.meteor/packages/email/1.0.11/os/email.js" />
@@ -443,6 +450,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/http/1.1.4/os/httpcall_client.js" />
       <root url="file://$USER_HOME$/.meteor/packages/constellation_plugins/0.4.3/os/constellation-plugins-server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/id-map/1.0.6/os/id-map.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/sacha_spin/2.3.1/os/packages/sacha_spin.js" />
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.7/os/jquery.js" />
       <root url="file://$USER_HOME$/.meteor/packages/softwarerero_accounts-t9n/1.1.7/os/t9n.coffee" />
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.7/os/main.js" />

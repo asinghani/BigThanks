@@ -1,0 +1,11 @@
+<template name="nav">
+    <div class="ui fixed secondary huge menu">
+        <div class="header item">Big Thanks</div>
+        <a class="{{isActiveRoute 'home'}} item" href="/">Home</a>
+        <a class="{{isActiveRoute 'help'}} item" href="/help">Help</a>
+
+        <div class="right menu">
+            {{> atNavButton}}
+        </div>
+    </div>
+</template>
