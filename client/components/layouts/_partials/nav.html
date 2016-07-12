@@ -13,12 +13,19 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="{{isActiveRoute 'home'}}"><a href="/">Home</a></li>
+                    <li class="{{isActiveRoute 'home'}} {{isActiveRoute 'home2'}}"><a href="/">Home</a></li>
+                    {{#if currentUser }}
+                        <li class="{{isActiveRoute 'dashboard'}}"><a href="/dashboard">Dashboard</a></li>
+                    {{/if}}
                     <li class="{{isActiveRoute 'help'}}"><a href="/help">Help</a></li>
                 </ul>
 
 
                 <ul class="nav navbar-nav navbar-right">
+                    {{#if currentUser }}
+                        <li class="{{isActiveRoute 'accountSettings'}}"><a href="/account-settings">Account Settings</a></li>
+                    {{/if}}
+                    <li class="navbar-spacer">_</li>
                     <li>{{> atNavButton}}</li>
                 </ul>
             </div>

@@ -1,18 +1,36 @@
 export default function () {
-    FlowRouter.route("/", {
+    var mainRoutes = FlowRouter.group({
+        triggersEnter: [
+            function() {
+                var route;
+                if (!(Meteor.loggingIn() || Meteor.userId())) {
+                    route = FlowRouter.current();
+                    if (route.route.name !== "login") {
+                        Session.set("redirectAfterLogin", route.path);
+                    }
+                    return FlowRouter.go("sign-in");
+                }
+            }
+        ]
+    });
+
+    mainRoutes.route("/dashboard", {
         action() {
             BlazeLayout.render("layout", {
-                content: "home",
+                content: "dashboard",
                 nav: "nav"
             });
         },
-        name: "home"
+        name: "dashboard"
     });
-    
-    AccountsTemplates.configureRoute("changePwd");
-    AccountsTemplates.configureRoute("forgotPwd");
-    AccountsTemplates.configureRoute("resetPwd");
-    AccountsTemplates.configureRoute("signIn");
-    AccountsTemplates.configureRoute("signUp");
-    AccountsTemplates.configureRoute("verifyEmail");
+
+    mainRoutes.route("/account-settings", {
+        action() {
+            BlazeLayout.render("layout", {
+                content: "accountSettings",
+                nav: "nav"
+            });
+        },
+        name: "accountSettings"
+    });
 }

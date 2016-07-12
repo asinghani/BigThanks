@@ -1,5 +1,8 @@
 AccountsTemplates.configure({
     defaultLayout: "layout",
+    defaultLayoutRegions: {
+        nav: "nav"
+    },
     defaultContentRegion: "content",
     confirmPassword: true,
     enablePasswordChange: true,
@@ -26,10 +29,10 @@ AccountsTemplates.configure({
     privacyUrl: "privacy",
     termsUrl: "terms-of-use",
 
-    homeRoutePath: "/",
+    homeRoutePath: "/dashboard",
     redirectTimeout: 4000,
 
-    //onLogoutHook: myLogoutFunc,
+    onLogoutHook: () => { FlowRouter.go("/logged-out"); },
     //onSubmitHook: mySubmitFunc,
     //postSignUpHook: myPostSubmitFunc,
 
@@ -48,4 +51,11 @@ AccountsTemplates.configure({
         data_type: "image"
     },
     showReCaptcha: true
+});
+
+AccountsTemplates.addField({
+    _id: 'name',
+    type: 'text',
+    displayName: "Name",
+    required: true
 });
