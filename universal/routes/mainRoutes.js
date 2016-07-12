@@ -8,7 +8,7 @@ export default function () {
                     if (route.route.name !== "login") {
                         Session.set("redirectAfterLogin", route.path);
                     }
-                    return FlowRouter.go("sign-in");
+                    return FlowRouter.go("/sign-in");
                 }
             }
         ]
