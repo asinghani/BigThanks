@@ -12,7 +12,6 @@ aldeed:template-extension@4.0.0
 allow-deny@1.0.3
 amplify@1.0.0
 arillo:flow-router-helpers@0.5.2
-audit-argument-checks@1.0.6
 autopublish@1.0.6
 autoupdate@1.2.7
 babel-compiler@6.6.1
@@ -61,6 +60,7 @@ es5-shim@4.5.9
 fastclick@1.0.10
 fortawesome:fontawesome@4.5.0
 fourseven:scss@3.4.3
+froatsnook:valid-email@1.0.0
 geojson-utils@1.0.7
 gwendall:body-events@0.1.6
 gwendall:session-json@0.1.7

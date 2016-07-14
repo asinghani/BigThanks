@@ -18,7 +18,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 underscore
 accounts-password
-audit-argument-checks
 fastclick
 browser-policy
 logging
@@ -62,3 +61,4 @@ semantic:ui-css
 seba:minifiers-autoprefixer
 fourseven:scss
 coffeescript
+froatsnook:valid-email

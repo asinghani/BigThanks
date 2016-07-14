@@ -1,51 +1,31 @@
 <template name="accountSettings">
-    <h3>Account Settings</h3>
-    <br>
-    <form class="ui large form">
-        <div class="ui stacked segment is-template">
 
-            <div class="at-input field">
-                <label>Name</label>
-                <div class="ui fluid input icon">
-                    <input autocorrect="off" autocapitalize="none" placeholder="Name" name="at-field-name" id="at-field-name" type="text">
-                </div>
+    <div class="at-grid ui middle aligned centered grid">
+        <div data-template="Template.atTitle (1) Template.atPwdForm (1) Template.atForm (1)" class="at-column column is-template">
+
+            <div class="at-title">
+                <h2 class="ui center aligned header">
+                    Account Settings
+                </h2>
             </div>
 
-            <div class="at-input required field">
-                <label>Email</label>
+            <div class="at-pwd-form">
+                <form class="ui large form" action="#" id="changesForm">
 
-                <div class="ui fluid input icon">
-                    <input autocorrect="off" autocapitalize="none" placeholder="Email" name="at-field-email" id="at-field-email" type="email">
+                    <div class="ui stacked segment is-template">
+                        <div class="at-input field">
+                            <label>Name</label>
+                            <div class="ui fluid input icon">
+                                <input autocorrect="off" autocapitalize="none" placeholder="Name" name="at-field-name" id="name" type="text">
+                            </div>
+                        </div>
 
-                </div>
-
+                        <a class="at-btn ui fluid large button" type="button" href="/change-password">Click here to change password</a>
+                        <br>
+                        <input value="Save Changes" id="save" class="at-btn ui fluid large primary button" type="submit">
+                    </div>
+                </form>
             </div>
-            <div class="at-input required field">
-
-                <label>
-                    Password
-                </label>
-
-                <div class="ui fluid input icon">
-                    <input autocorrect="off" autocapitalize="none" placeholder="Password" name="at-field-password" id="at-field-password" type="password">
-
-                </div>
-
-            </div>
-            <div class="at-input required field">
-
-                <label>
-                    Password (again)
-                </label>
-
-                <div class="ui fluid input icon">
-                    <input autocorrect="off" autocapitalize="none" placeholder="Password (again)" name="at-field-password_again" id="at-field-password_again" type="password">
-
-                </div>
-
-            </div>
-
-            <input value="Register Now!" id="at-btn" class="at-btn ui fluid large primary button" type="submit">
         </div>
-    </form>
+    </div>
 </template>
