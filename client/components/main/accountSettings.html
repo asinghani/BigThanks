@@ -1,5 +1,51 @@
 <template name="accountSettings">
     <h3>Account Settings</h3>
     <br>
-    fig
+    <form class="ui large form">
+        <div class="ui stacked segment is-template">
+
+            <div class="at-input field">
+                <label>Name</label>
+                <div class="ui fluid input icon">
+                    <input autocorrect="off" autocapitalize="none" placeholder="Name" name="at-field-name" id="at-field-name" type="text">
+                </div>
+            </div>
+
+            <div class="at-input required field">
+                <label>Email</label>
+
+                <div class="ui fluid input icon">
+                    <input autocorrect="off" autocapitalize="none" placeholder="Email" name="at-field-email" id="at-field-email" type="email">
+
+                </div>
+
+            </div>
+            <div class="at-input required field">
+
+                <label>
+                    Password
+                </label>
+
+                <div class="ui fluid input icon">
+                    <input autocorrect="off" autocapitalize="none" placeholder="Password" name="at-field-password" id="at-field-password" type="password">
+
+                </div>
+
+            </div>
+            <div class="at-input required field">
+
+                <label>
+                    Password (again)
+                </label>
+
+                <div class="ui fluid input icon">
+                    <input autocorrect="off" autocapitalize="none" placeholder="Password (again)" name="at-field-password_again" id="at-field-password_again" type="password">
+
+                </div>
+
+            </div>
+
+            <input value="Register Now!" id="at-btn" class="at-btn ui fluid large primary button" type="submit">
+        </div>
+    </form>
 </template>

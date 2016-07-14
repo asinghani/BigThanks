@@ -1,7 +1,7 @@
 export default function () {
     var mainRoutes = FlowRouter.group({
         triggersEnter: [
-            function() {
+            () => {
                 var route;
                 if (!(Meteor.loggingIn() || Meteor.userId())) {
                     route = FlowRouter.current();
