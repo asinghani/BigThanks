@@ -1,0 +1,20 @@
+@import '{reywood:bootstrap3-sass}/bootstrap';
+
+.at-form {
+  @extend .panel, .panel-default;
+  padding: 0;
+}
+
+.at-title {
+  @extend .panel-heading;
+}
+
+.at-pwd-form {
+  @extend .panel-body;
+}
+
+.at-signup-link, .at-resend-verification-email-link, .at-terms-link, .at-signin-link {
+  @extend .panel-footer;
+  margin-top: 0;
+  margin-bottom: 0;
+}

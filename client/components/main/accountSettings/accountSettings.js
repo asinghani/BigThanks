@@ -12,15 +12,16 @@ Template.accountSettings.events({
             Meteor.call("user.updateName", form.name.value)
         }
 
-        alertify.alert("Successfully changed account settings. Changes may take up to 1-2 minutes to appear.", () => {
+        swal({
+            title: "Success",
+            text: "Successfully changed account settings. Changes may take up to 30 seconds to appear.",
+            type: "success"
+        }, () => {
             FlowRouter.go("/dashboard");
         });
     }
 });
 
 Template.accountSettings.onRendered(() => {
-    if(!this._rendered) {
-        this._rendered = true;
-        $("#name").text(Meteor.user().profile.name);
-    }
-}
+    $("#name").val(Meteor.user().profile.name);
+});

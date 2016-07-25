@@ -36,7 +36,6 @@ insecure
 aldeed:collection2
 kadira:flow-router
 kadira:blaze-layout
-useraccounts:semantic-ui
 natestrauser:animate-css
 dburles:collection-helpers
 meteorhacks:fast-render
@@ -56,9 +55,10 @@ useraccounts:core
 accounts-ui
 email
 meteortoys:allthings
-twbs:bootstrap
-semantic:ui-css
 seba:minifiers-autoprefixer
 fourseven:scss
 coffeescript
-froatsnook:valid-email
+dschulz:jquery-qrcode
+useraccounts:bootstrap
+reywood:bootstrap3-sass
+kevohagan:sweetalert

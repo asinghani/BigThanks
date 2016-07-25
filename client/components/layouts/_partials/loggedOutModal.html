@@ -1,12 +1,13 @@
 <template name="loggedOutModal">
     <script>
-        var alert;
         setTimeout(function() {
-            alert = alertify.alert("<b>Signed out</b><br>You have been logged out.<br><br>" +
-                    "Would you like to <a href='/sign-in' onClick='hideAlert();'>sign in as another user</a>?");
+            swal({
+                title: "Signed out",
+                text: "You have been logged out.",
+                html: true
+            }, function(){
+                FlowRouter.go("/");
+            });
         }, 500);
-        function hideAlert(){
-            alert.close();
-        }
     </script>
 </template>

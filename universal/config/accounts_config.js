@@ -33,8 +33,21 @@ AccountsTemplates.configure({
     redirectTimeout: 4000,
 
     onLogoutHook: () => { FlowRouter.go("/logged-out"); },
-    //onSubmitHook: mySubmitFunc,
-    //postSignUpHook: myPostSubmitFunc,
+    onSubmitHook: (err, state) => {
+        if(!err){
+            if(state === "changePwd"){
+                swal({
+                    title: "Changed Password",
+                    text: "Your account password has been changed.",
+                    type: "success"
+                }, () => {
+                    FlowRouter.go("/dashboard");
+                });
+                return false;
+            }
+        }
+    },
+    postSignUpHook: () => { Meteor.call("user.created"); },
 
     // Texts
     texts: {
