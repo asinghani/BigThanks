@@ -17,11 +17,13 @@ Template.accountSettings.events({
             text: "Successfully changed account settings. Changes may take up to 30 seconds to appear.",
             type: "success"
         }, () => {
-            FlowRouter.go("/dashboard");
+            Router.go("/user/dashboard");
         });
     }
 });
 
 Template.accountSettings.onRendered(() => {
-    $("#name").val(Meteor.user().profile.name);
+    Meteor.setTimeout(() => {
+        $("#name").val(Meteor.user().profile.name);
+    }, 0);
 });

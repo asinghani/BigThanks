@@ -29,10 +29,10 @@ AccountsTemplates.configure({
     privacyUrl: "privacy",
     termsUrl: "terms-of-use",
 
-    homeRoutePath: "/dashboard",
+    homeRoutePath: "/user/dashboard",
     redirectTimeout: 4000,
 
-    onLogoutHook: () => { FlowRouter.go("/logged-out"); },
+    onLogoutHook: () => { Router.go("/logged-out"); },
     onSubmitHook: (err, state) => {
         if(!err){
             if(state === "changePwd"){
@@ -41,7 +41,7 @@ AccountsTemplates.configure({
                     text: "Your account password has been changed.",
                     type: "success"
                 }, () => {
-                    FlowRouter.go("/dashboard");
+                    Router.go("/user/dashboard");
                 });
                 return false;
             }

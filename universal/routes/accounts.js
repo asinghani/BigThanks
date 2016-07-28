@@ -4,7 +4,7 @@ export default function () {
         redirect = Session.get("redirectAfterLogin");
         if (redirect != null) {
             if (redirect !== "/login") {
-                return FlowRouter.go(redirect);
+                return Router.go(redirect);
             }
         }
     });

@@ -34,7 +34,6 @@ insecure
 # Community Packages
 
 aldeed:collection2
-kadira:flow-router
 kadira:blaze-layout
 natestrauser:animate-css
 dburles:collection-helpers
@@ -48,13 +47,10 @@ fortawesome:fontawesome
 alanning:roles
 yogiben:pretty-email
 sacha:spin
-useraccounts:flow-routing
-arillo:flow-router-helpers
 zimme:active-route
 useraccounts:core
 accounts-ui
 email
-meteortoys:allthings
 seba:minifiers-autoprefixer
 fourseven:scss
 coffeescript
@@ -62,3 +58,7 @@ dschulz:jquery-qrcode
 useraccounts:bootstrap
 reywood:bootstrap3-sass
 kevohagan:sweetalert
+aslagle:reactive-table
+momentjs:moment
+iron:router
+useraccounts:iron-routing

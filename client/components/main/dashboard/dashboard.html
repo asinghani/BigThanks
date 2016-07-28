@@ -1,10 +1,6 @@
 <template name="dashboard">
     <div class="row">
-        <div class="col-lg-4 col-md-6">
-            <div id="qr"></div>
-            <p class="qr-label">The QR code above must be scanned by organizers to add credits to your account.</p>
-        </div>
-        <div class="col-lg-8 col-md-6">
+        <div class="col-lg-8 col-md-6 col-sm-offset-0 col-xs-offset-2">
             <div class="visible-xs-block visible-sm-block">
                 <br>
             </div>
@@ -13,9 +9,21 @@
             <p class="small-title">Total hours volunteered: {{currentUser.profile.totalHours}}</p>
             <p class="small-title">Current credits available: {{currentUser.profile.credits}}</p>
         </div>
+        <div class="col-lg-4 col-md-6 col-sm-offset-0 col-xs-offset-2">
+            <div class="visible-xs-block visible-sm-block">
+                <br>
+            </div>
+            <div id="side-btn-group">
+                <a class="btn btn-primary fill-parent bold" href="/volunteer-opportunities">Find volunteer opportunites</a>
+                <br>
+                <br>
+                <a class="btn btn-primary fill-parent bold" href="/request-credits">Request validation of credits</a>
+            </div>
+            <div class="visible-xs-block visible-sm-block">
+                <br>
+            </div>
+        </div>
     </div>
-
-    <!--{{> reactiveTable settings=historyTable}}-->
     <br>
-    <br>
+    {{> reactiveTable settings=historyTable}}
 </template>

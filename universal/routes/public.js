@@ -20,7 +20,7 @@ export default function () {
         },
         name: "home2"
     });
-
+    
     publicRoutes.route("/help", {
         action() {
             BlazeLayout.render("layout", {
@@ -29,5 +29,15 @@ export default function () {
             });
         },
         name: "help"
+    });
+
+    publicRoutes.route("/volunteer-opportunities", {
+        action() {
+            BlazeLayout.render("layout", {
+                content: "volunteerOpportunities",
+                nav: "nav"
+            });
+        },
+        name: "volunteerOpportunities"
     });
 }
