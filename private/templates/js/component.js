@@ -1,6 +1,6 @@
 // { "path" : "client/components/__componentName__/__componentName__.js" }
 // TODO: call this in entry file
-export default function (Template) {
+export default (Template) => {
   Template['__componentName__'].helpers({
   });
 

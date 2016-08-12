@@ -6,7 +6,7 @@ AccountsTemplates.configure({
     defaultContentRegion: "content",
     confirmPassword: true,
     enablePasswordChange: true,
-    enforceEmailVerification: true,
+    enforceEmailVerification: false,
     forbidClientAccountCreation: false,
     overrideLoginErrors: true,
     sendVerificationEmail: true,
@@ -32,7 +32,7 @@ AccountsTemplates.configure({
     homeRoutePath: "/user/dashboard",
     redirectTimeout: 4000,
 
-    onLogoutHook: () => { Router.go("/logged-out"); },
+    onLogoutHook: () => { FlowRouter.go("/logged-out"); },
     onSubmitHook: (err, state) => {
         if(!err){
             if(state === "changePwd"){
@@ -41,13 +41,16 @@ AccountsTemplates.configure({
                     text: "Your account password has been changed.",
                     type: "success"
                 }, () => {
-                    Router.go("/user/dashboard");
+                    FlowRouter.go("/user/dashboard");
                 });
                 return false;
             }
         }
     },
-    postSignUpHook: () => { Meteor.call("user.created"); },
+    postSignUpHook: (userId) => {
+        // Running on server-side, see https://github.com/meteor-useraccounts/core/blob/master/Guide.md
+        Meteor.users.update({_id: userId}, {$set: {"profile.totalHours": 0, "profile.credits": 0, "profile.history": []}});
+    },
 
     // Texts
     texts: {

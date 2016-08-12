@@ -1,5 +1,5 @@
 // { "path" : "universal/routes/mainRoutes.js" }
-export default function () {
+export default () => {
   FlowRouter.route("/", {
     action() {
       BlazeLayout.render("basicLayout", {

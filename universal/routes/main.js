@@ -1,4 +1,4 @@
-export default function () {
+export default () => {
     var mainRoutes = FlowRouter.group({
         prefix: "/user",
         triggersEnter: [
@@ -47,4 +47,4 @@ export default function () {
         },
         name: "requestCredits"
     });
-}
+};

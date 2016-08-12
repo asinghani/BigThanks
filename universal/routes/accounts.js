@@ -1,10 +1,14 @@
-export default function () {
-    Accounts.onLogin(function() {
+export default () => {
+
+    /**
+     * Redirect user to page previously attempting to access after logging in (stored in "redirectAfterLogin" session variable)
+     */
+    Accounts.onLogin(() => {
         var redirect;
         redirect = Session.get("redirectAfterLogin");
         if (redirect != null) {
             if (redirect !== "/login") {
-                return Router.go(redirect);
+                return FlowRouter.go(redirect);
             }
         }
     });
@@ -15,4 +19,4 @@ export default function () {
     AccountsTemplates.configureRoute("signIn");
     AccountsTemplates.configureRoute("signUp");
     AccountsTemplates.configureRoute("verifyEmail");
-}
+};

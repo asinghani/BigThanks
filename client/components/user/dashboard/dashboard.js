@@ -6,7 +6,7 @@ import "./historyTablePlaceholder.html";
 const StatusTypes = ["<p class=\"text-primary\">Pending</p>", "<p class=\"text-success bold\">Approved</p>", "<p class=\"text-danger bold\">Denied</p>"];
 
 Template.dashboard.helpers({
-    historyTable: function () {
+    historyTable: () => {
         var f = [{
             label: "Date",
             key: "timestamp",

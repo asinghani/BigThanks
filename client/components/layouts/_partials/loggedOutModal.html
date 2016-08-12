@@ -1,13 +1,13 @@
 <template name="loggedOutModal">
     <script>
-        setTimeout(function() {
+        setTimeout(function () {
             swal({
                 title: "Signed out",
                 text: "You have been logged out.",
                 html: true
-            }, function(){
-                Router.go("/");
+            }, function () {
+                FlowRouter.go("/");
             });
         }, 500);
-    </script>
+    </script>r
 </template>

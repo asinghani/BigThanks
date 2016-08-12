@@ -17,7 +17,7 @@ Template.accountSettings.events({
             text: "Successfully changed account settings. Changes may take up to 30 seconds to appear.",
             type: "success"
         }, () => {
-            Router.go("/user/dashboard");
+            FlowRouter.go("/user/dashboard");
         });
     }
 });

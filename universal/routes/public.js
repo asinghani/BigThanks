@@ -1,4 +1,4 @@
-export default function () {
+export default () => {
     var publicRoutes = FlowRouter.group({});
     publicRoutes.route("/", {
         action() {
