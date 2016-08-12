@@ -21,7 +21,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "dashboard",
-                nav: "nav"
+                nav: "userNav"
             });
         },
         name: "dashboard"
@@ -31,7 +31,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "accountSettings",
-                nav: "nav"
+                nav: "userNav"
             });
         },
         name: "accountSettings"
@@ -42,7 +42,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "requestCredits",
-                nav: "nav"
+                nav: "userNav"
             });
         },
         name: "requestCredits"

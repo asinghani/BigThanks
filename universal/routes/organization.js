@@ -2,7 +2,7 @@ export default () => {
     var organizationRoutes = FlowRouter.group({
         prefix: "/organization",
         triggersEnter: [
-            () => {
+            (ctx, redirect) => {
                 var route;
                 if (!(Meteor.loggingIn() || Meteor.userId())) {
                     route = FlowRouter.current();
@@ -21,7 +21,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "dashboard",
-                //nav: "nav"
+                //nav: "organizationNav"
             });
         },
         name: "dashboard"
@@ -31,7 +31,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "accountSettings",
-                nav: "nav"
+                nav: "organizationNav"
             });
         },
         name: "accountSettings"
@@ -42,7 +42,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "requestCredits",
-                nav: "nav"
+                nav: "organizationNav"
             });
         },
         name: "requestCredits"

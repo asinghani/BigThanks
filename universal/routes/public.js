@@ -4,7 +4,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "home",
-                nav: "nav"
+                nav: "publicNav"
             });
         },
         name: "home"
@@ -14,7 +14,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "home",
-                nav: "nav",
+                nav: "publicNav",
                 extra: "loggedOutModal"
             });
         },
@@ -25,7 +25,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "help",
-                nav: "nav"
+                nav: "publicNav"
             });
         },
         name: "help"
@@ -35,7 +35,7 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "volunteerOpportunities",
-                nav: "nav"
+                nav: "publicNav"
             });
         },
         name: "volunteerOpportunities"
