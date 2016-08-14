@@ -12,16 +12,23 @@ export default () => {
                     redirect("/sign-in");
                 } else if (!Roles.userIsInRole(Meteor.userId(), "organization", "Reserved")) {
                     redirect("/user/dashboard");
+                } else {
+                    $("body").css("padding-top", 0);
                 }
+            }
+        ],
+        triggersExit: [
+            () => {
+                $("body").css("padding-top", "");
             }
         ]
     });
 
     organizationRoutes.route("/dashboard", {
         action() {
-            BlazeLayout.render("layout", {
+            BlazeLayout.render("fullWidthLayout", {
                 content: "dashboard",
-                //nav: "organizationNav"
+                nav: "organizationNav"
             });
         },
         name: "dashboard"
@@ -29,22 +36,11 @@ export default () => {
 
     organizationRoutes.route("/account-settings", {
         action() {
-            BlazeLayout.render("layout", {
-                content: "accountSettings",
+            BlazeLayout.render("fullWidthLayout", {
+                content: "accountSettingsOrganization",
                 nav: "organizationNav"
             });
         },
         name: "accountSettings"
-    });
-
-
-    organizationRoutes.route("/request-credits", {
-        action() {
-            BlazeLayout.render("layout", {
-                content: "requestCredits",
-                nav: "organizationNav"
-            });
-        },
-        name: "requestCredits"
     });
 }

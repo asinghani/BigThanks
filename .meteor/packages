@@ -55,10 +55,9 @@ seba:minifiers-autoprefixer
 coffeescript@1.2.3
 dschulz:jquery-qrcode
 useraccounts:bootstrap
-reywood:bootstrap3-sass
-kevohagan:sweetalert
 aslagle:reactive-table
 momentjs:moment
 useraccounts:flow-routing
 less
 kadira:flow-router
+onokumus:metismenu
