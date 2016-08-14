@@ -1,0 +1,15 @@
+{
+  "name": "bigthanks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+      "dev": "meteor --port=0.0.0.0:3000 --settings settings.json",
+      "start": "meteor npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asinghani/BigThanks.git"
+  },
+  "author": "Anish"
+}
