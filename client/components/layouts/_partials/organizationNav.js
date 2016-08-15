@@ -4,6 +4,7 @@ import "./organizationNav.html";
 
 Template.organizationNav.onRendered(() => {
     $("#side-menu").metisMenu();
+    $("[data-toggle=\"tooltip\"]").tooltip();
 
     let resizeCallback = () => {
         var topOffset = $("nav").height();

@@ -78,18 +78,31 @@
                     <li class="{{isActiveRoute regex='home|volunteerOpportunities|contact|help'}}">
                         <a href="#" aria-disabled="{{isActiveRouteTrueFalse 'home|volunteerOpportunities|contact|help'}}"><i class="fa fa-th-list fa-fw"></i> Big Thanks <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="{{isActiveRoute 'home'}}"><a href="/"><i class="fa fa-home fa-fw"></i> Home</a></li>
-                            <li class="{{isActiveRoute 'volunteerOpportunities'}}"><a href="/volunteer-opportunities"><i class="fa fa-map-marker fa-fw"></i> Volunteer Opportunities</a></li>
-                            <li class="{{isActiveRoute 'contact'}}"><a href="/contact"><i class="fa fa-envelope fa-fw"></i> Contact us</a></li>
-                            <li class="{{isActiveRoute 'help'}}"><a href="/help"><i class="fa fa-info-circle fa-fw"></i> Help</a></li>
+                            <li class="{{isActiveRoute 'home'}}">
+                                <a href="/"><i class="fa fa-home fa-fw"></i> Home</a>
+                            </li>
+                            <li class="{{isActiveRoute 'volunteerOpportunities'}}">
+                                <a href="/volunteer-opportunities"><i class="fa fa-map-marker fa-fw"></i> Volunteer Opportunities</a>
+                            </li>
+                            <li class="{{isActiveRoute 'contact'}}">
+                                <a href="/contact"><i class="fa fa-envelope fa-fw"></i> Contact us</a>
+                            </li>
+                            <li class="{{isActiveRoute 'help'}}">
+                                <a href="/help"><i class="fa fa-info-circle fa-fw"></i> Help</a>
+                            </li>
                         </ul>
                     </li>
 
                     <!-- Dashboard Link -->
-                    <li class="{{isActiveRoute 'organizationDashboard'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+                    <li class="{{isActiveRoute 'organizationDashboard'}}">
+                        <a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                    </li>
 
                     <!-- Accounts Link -->
-                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+                    <li class="{{isActiveRoute 'accounts'}} disabled">
+                        <a href="#" data-toggle="popover" data-trigger="hover" title="Dismissible popover"
+                           data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right"><i class="fa fa-users fa-fw"></i> Accounts</a>
+                    </li>
 
                     <!-- Dashboard Link -->
                     <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
