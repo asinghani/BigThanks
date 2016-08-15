@@ -27,11 +27,11 @@ export default () => {
     organizationRoutes.route("/dashboard", {
         action() {
             BlazeLayout.render("fullWidthLayout", {
-                content: "dashboard",
+                content: "organizationDashboard",
                 nav: "organizationNav"
             });
         },
-        name: "dashboard"
+        name: "organizationDashboard"
     });
 
     organizationRoutes.route("/account-settings", {

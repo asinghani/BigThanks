@@ -1,5 +1,5 @@
 export default () => {
-    var mainRoutes = FlowRouter.group({
+    var userRoutes = FlowRouter.group({
         prefix: "/user",
         triggersEnter: [
             (ctx, redirect) => {
@@ -17,7 +17,7 @@ export default () => {
         ]
     });
 
-    mainRoutes.route("/dashboard", {
+    userRoutes.route("/dashboard", {
         action() {
             BlazeLayout.render("layout", {
                 content: "dashboard",
@@ -27,7 +27,7 @@ export default () => {
         name: "dashboard"
     });
 
-    mainRoutes.route("/account-settings", {
+    userRoutes.route("/account-settings", {
         action() {
             BlazeLayout.render("layout", {
                 content: "accountSettings",
@@ -38,7 +38,7 @@ export default () => {
     });
 
 
-    mainRoutes.route("/request-credits", {
+    userRoutes.route("/request-credits", {
         action() {
             BlazeLayout.render("layout", {
                 content: "requestCredits",

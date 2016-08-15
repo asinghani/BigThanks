@@ -45,7 +45,6 @@ simple:dev-error-overlay
 babrahams:constellation
 fortawesome:fontawesome
 alanning:roles
-yogiben:pretty-email
 sacha:spin
 zimme:active-route
 useraccounts:core
@@ -61,3 +60,5 @@ useraccounts:flow-routing
 less
 kadira:flow-router
 onokumus:metismenu
+jboulhous:dev
+vazco:universe-html-purifier

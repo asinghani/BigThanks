@@ -2,7 +2,7 @@ export default () => {
     AccountsTemplates.configure({
         defaultLayout: "layout",
         defaultLayoutRegions: {
-            nav: "userNav"
+            nav: "publicNav"
         },
         defaultContentRegion: "content",
         confirmPassword: true,

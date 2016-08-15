@@ -36,14 +36,14 @@ Template.accountSettingsOrganization.events({
         swal(options, () => {
             Meteor.call("user.resetPassword", () => {
                 setTimeout(() => {
-                    swal("Password has been reset", "Check your email to set your new password.", "success");
+                    swal("Password has been changed", "Check your email to set your new password.", "success");
                 }, 500);
             });
         });
     }
 });
 
-Template.accountSettings.onRendered(() => {
+Template.accountSettingsOrganization.onRendered(() => {
     Meteor.setTimeout(() => {
         $("#name").val(Meteor.user().profile.name);
     }, 0);

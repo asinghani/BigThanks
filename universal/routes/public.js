@@ -1,43 +1,53 @@
+import { getNav, getLayout } from "../util/layout.js";
+
 export default () => {
     var publicRoutes = FlowRouter.group({});
     publicRoutes.route("/", {
         action() {
-            BlazeLayout.render("layout", {
+            BlazeLayout.render(getLayout(), {
                 content: "home",
-                nav: "publicNav"
+                nav: getNav()
             });
         },
         name: "home"
     });
-
-    publicRoutes.route("/logged-out", {
-        action() {
-            BlazeLayout.render("layout", {
-                content: "home",
-                nav: "publicNav",
-                extra: "loggedOutModal"
-            });
-        },
-        name: "home2"
-    });
     
     publicRoutes.route("/help", {
         action() {
-            BlazeLayout.render("layout", {
+            BlazeLayout.render(getLayout(), {
                 content: "help",
-                nav: "publicNav"
+                nav: getNav()
             });
         },
         name: "help"
     });
 
+    publicRoutes.route("/contact", {
+        action() {
+            BlazeLayout.render(getLayout(), {
+                content: "contact",
+                nav: getNav()
+            });
+        },
+        name: "contact"
+    });
+
     publicRoutes.route("/volunteer-opportunities", {
         action() {
-            BlazeLayout.render("layout", {
+            BlazeLayout.render(getLayout(), {
                 content: "volunteerOpportunities",
-                nav: "publicNav"
+                nav: getNav()
             });
         },
         name: "volunteerOpportunities"
     });
-}
+
+    FlowRouter.notFound = {
+        action() {
+            BlazeLayout.render(getLayout(), {
+                content: "404",
+                nav: getNav()
+            });
+        }
+    };
+};

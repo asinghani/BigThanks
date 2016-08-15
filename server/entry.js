@@ -6,3 +6,9 @@ import setupBrowserPolicy from "./config/security.js";
 
 setupBrowserPolicy(BrowserPolicy);
 setupAccounts();
+
+// Extra debug code
+import setupDebug from "../universal/debug.js";
+if(Meteor.isDevelopment){
+    setupDebug();
+}

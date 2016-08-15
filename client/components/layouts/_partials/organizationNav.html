@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="dashboard">Big Thanks Organization Dashboard</a>
+            <a class="navbar-brand" href="/organization/dashboard">Big Thanks Organization Dashboard</a>
         </div>
 
         <!-- Top Navbar -->
@@ -62,34 +62,57 @@
                     <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="account-settings"><i class="fa fa-user fa-fw"></i> Account Settings</a></li>
+                    <li><a href="/organization/account-settings"><i class="fa fa-user fa-fw"></i> Account Settings</a></li>
                     <li class="divider"></li>
                     <li><a href="/sign-out"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                 </ul>
             </li>
         </ul>
 
+        <!-- Sidebar -->
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
-                    <li>
-                        <a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+
+                    <!-- Public Routes -->
+                    <li class="{{isActiveRoute regex='home|volunteerOpportunities|contact|help'}}">
+                        <a href="#" aria-disabled="{{isActiveRouteTrueFalse 'home|volunteerOpportunities|contact|help'}}"><i class="fa fa-th-list fa-fw"></i> Big Thanks <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="flot.html">Flot Charts</a>
-                            </li>
-                            <li>
-                                <a href="morris.html">Morris.js Charts</a>
-                            </li>
+                            <li class="{{isActiveRoute 'home'}}"><a href="/"><i class="fa fa-home fa-fw"></i> Home</a></li>
+                            <li class="{{isActiveRoute 'volunteerOpportunities'}}"><a href="/volunteer-opportunities"><i class="fa fa-map-marker fa-fw"></i> Volunteer Opportunities</a></li>
+                            <li class="{{isActiveRoute 'contact'}}"><a href="/contact"><i class="fa fa-envelope fa-fw"></i> Contact us</a></li>
+                            <li class="{{isActiveRoute 'help'}}"><a href="/help"><i class="fa fa-info-circle fa-fw"></i> Help</a></li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                    </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'organizationDashboard'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Accounts Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+                    <!-- Dashboard Link -->
+                    <li class="{{isActiveRoute 'home'}}"><a href="/organization/dashboard"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a> </li>
+
+
                     <li>
                         <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                     </li>
@@ -161,10 +184,6 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.sidebar-collapse -->
         </div>
-        <!-- /.navbar-static-side -->
     </nav>
-
-    <script src="/js/navbar.js"></script>
 </template>

@@ -1,3 +1,5 @@
+import { getNav, getLayout } from "../util/layout.js";
+
 export default () => {
 
     /**
@@ -8,7 +10,7 @@ export default () => {
         redirect = Session.get("redirectAfterLogin");
         if (redirect != null) {
             if (redirect !== "/login") {
-                return Router.go(redirect);
+                return FlowRouter.go(redirect);
             }
         }
     });
@@ -22,20 +24,30 @@ export default () => {
 
     // Change password route
     AccountsTemplates.configureRoute("changePwd", {
-        path: "/user/change-password"
+        path: "/change-password",
+        layoutTemplate: getLayout(),
+        layoutRegions: {
+            nav: getNav()
+        }
     });
 
     // Allow /sign-out route for links
     FlowRouter.route("/sign-out", {
-        action() {
+        action(ctx, redirect) {
             AccountsTemplates.logout();
-            BlazeLayout.render("layout", {
-                content: "home",
-                nav: "publicNav",
-                extra: "logged-out"
-            });
+            redirect("logged-out");
         },
         name: "logout"
     });
 
+    FlowRouter.route("/logged-out", {
+        action() {
+            BlazeLayout.render("layout", {
+                content: "home",
+                nav: "publicNav",
+                extra: "loggedOutModal"
+            });
+        },
+        name: "home2"
+    });
 };
