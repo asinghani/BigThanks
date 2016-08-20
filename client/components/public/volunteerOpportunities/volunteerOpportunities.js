@@ -11,7 +11,8 @@ Template.volunteerOpportunities.helpers({
             key: "startDate",
             sortByValue: true,
             fn: (date, obj) => {
-                return moment(parseInt(date)*1000).format("MMM Do, YYYY")+" - "+moment(parseInt(obj.endDate)*1000).format("MMM Do, YYYY");
+                if(parseInt(date) === parseInt(obj.endDate)) return moment.unix(parseInt(date)).format("MMM Do, YYYY");
+                return moment.unix(parseInt(date)).format("MMM Do, YYYY")+" - "+moment.unix(parseInt(obj.endDate)).format("MMM Do, YYYY");
             }
         },{
             label: "Title",
@@ -75,7 +76,7 @@ Template.volunteerOpportunities.helpers({
             let opportunities = JSON.parse(JSON.stringify(organization.opportunities));
             if (opportunities){
                 opportunities.forEach((opportunity) => {
-                    opportunity._id = new Mongo.ObjectID();
+                    if(!opportunity.public) return;
                     opportunity.organizer = organization._id;
                     data.push(opportunity);
                 });
