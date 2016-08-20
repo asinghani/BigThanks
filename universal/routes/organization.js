@@ -10,7 +10,7 @@ export default () => {
                         Session.set("redirectAfterLogin", route.path);
                     }
                     redirect("/sign-in");
-                } else if (!Roles.userIsInRole(Meteor.userId(), "organization", "Reserved")) {
+                } else if (!Roles.userIsInRole(Meteor.userId(), "organization")) {
                     redirect("/user/dashboard");
                 } else {
                     $("body").css("padding-top", 0);
@@ -42,5 +42,15 @@ export default () => {
             });
         },
         name: "accountSettings"
+    });
+
+    organizationRoutes.route("/opportunities", {
+        action() {
+            BlazeLayout.render("fullWidthLayout", {
+                content: "organizationOpportunities",
+                nav: "organizationNav"
+            });
+        },
+        name: "organizationOpportunities"
     });
 }

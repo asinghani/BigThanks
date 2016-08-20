@@ -4,7 +4,10 @@ import "./organizationNav.html";
 
 Template.organizationNav.onRendered(() => {
     $("#side-menu").metisMenu();
-    $("[data-toggle=\"tooltip\"]").tooltip();
+
+    $("[data-toggle=\"popover\"]").popover({
+        container: "body"
+    });
 
     let resizeCallback = () => {
         var topOffset = $("nav").height();
@@ -25,7 +28,11 @@ Template.organizationNav.onRendered(() => {
 });
 
 Template.organizationNav.helpers({
-    isActiveRouteTrueFalse(regex){
+    isActiveRouteTrueFalse: (regex) => {
         return ActiveRoute.name(new RegExp(regex));
+    }, isActiveRouteExpanded: (regex) => {
+        return ActiveRoute.name(new RegExp(regex)) ? "expanded" : "";
+    }, isActiveRouteIn: (regex) => {
+        return ActiveRoute.name(new RegExp(regex)) ? "collapse in" : "";
     }
 });

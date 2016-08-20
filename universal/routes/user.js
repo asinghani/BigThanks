@@ -10,7 +10,7 @@ export default () => {
                         Session.set("redirectAfterLogin", route.path);
                     }
                     redirect("/sign-in");
-                } else if (Roles.userIsInRole(Meteor.userId(), "organization", "Reserved")) {
+                } else if (Roles.userIsInRole(Meteor.userId(), "organization")) {
                     redirect("/organization/dashboard");
                 }
             }

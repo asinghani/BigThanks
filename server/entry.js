@@ -1,8 +1,8 @@
-import "../imports/api/organizations.js";
-import "../imports/api/opportunities.js";
-
 import setupAccounts from "../universal/config/accounts.js";
 import setupBrowserPolicy from "./config/security.js";
+import { Organizations } from "../imports/api/organizations.js";
+
+console.dir(Organizations.find({}).fetch());
 
 setupBrowserPolicy(BrowserPolicy);
 setupAccounts();
