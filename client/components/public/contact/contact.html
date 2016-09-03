@@ -1,0 +1,45 @@
+<template name="contact">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="at-form">
+
+                <div class="at-title">
+                    <h3>Contact Us</h3>
+                </div>
+                <div class="alert alert-danger" id="fill-all" style="display:none;" role="alert">
+                    Please fill all fields to continue.
+                </div>
+
+                <div class="at-pwd-form">
+                    <form class="ui large form" action="#" id="contactForm" style="margin: 0;">
+
+                        <div class="at-input field">
+                            <label>Name</label>
+                            <input class="form-control" id="name" type="text">
+                        </div>
+                        <br>
+                        <div class="at-input field">
+                            <label>Email</label>
+                            <input class="form-control" id="email" type="email">
+                        </div>
+                        <br>
+                        <div class="at-input field">
+                            <label>Subject</label>
+                            <input class="form-control" id="subject" type="text">
+                        </div>
+                        <br>
+                        <div class="at-input field">
+                            <label>Message</label>
+                            <textarea class="form-control" id="message" rows=5> </textarea>
+                        </div>
+                        <br>
+                        <br>
+                        <button id="save" class="at-btn submit btn btn-lg btn-block btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

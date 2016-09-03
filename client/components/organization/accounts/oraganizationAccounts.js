@@ -76,7 +76,16 @@ Template.organizationAccounts.helpers({
             rowsPerPage: 10,
             showFilter: true,
             fields: f,
-            rowClass: (obj) => obj._id === Meteor.userId() ? "success" : "default"
+            rowClass: (obj) => {
+                if(obj._id === Meteor.userId()){
+                    return "success";
+                } else if (obj._id === window.location.hash.substr(1)) {
+                    return "flash-cell";
+                } else {
+                    return "default";
+                }
+
+            }
         };
     }
 });

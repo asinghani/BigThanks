@@ -3,6 +3,9 @@ import { Organizations } from "/imports/api/organizations.js";
 
 import "./volunteerOpportunities.html";
 
+var map;
+var satelliteLayer;
+
 Template.volunteerOpportunities.helpers({
     volunteerTable: () => {
         var f = [{
@@ -84,6 +87,10 @@ Template.volunteerOpportunities.helpers({
             }
         });
 
+        Meteor.setTimeout(() => {
+            renderMap(data);
+        }, 0);
+
         return {
             collection: data,
             rowsPerPage: 10,
@@ -93,3 +100,42 @@ Template.volunteerOpportunities.helpers({
         };
     }
 });
+
+function renderMap(data){
+    addressPicker();
+
+    $("#opportunityMap").height($(document).height()*2/5);
+
+    if(!map){
+        map = L.map("opportunityMap").setView([37.7749, -122.4194], 13);
+
+        satelliteLayer = new L.Google("hybrid");
+        map.addLayer(satelliteLayer);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((position) => {
+                map.setView([position.coords.latitude, position.coords.longitude], 13);
+            });
+        }
+    }
+}
+
+function addressPicker(){
+    $("#map").locationpicker({
+        radius: 0,
+        inputBinding: {
+            locationNameInput: $("#locationSearch"),
+            latitudeInput: $("#lat"),
+            longitudeInput: $("#long")
+        },
+        enableAutocomplete: true,
+        onchanged: (loc) => {
+            let offset = map._getNewTopLeftPoint([loc.latitude, loc.longitude]).subtract(map._getTopLeftPoint());
+            map.panBy(offset, {animate: true, duration: 1.5});
+        }
+    });
+    Meteor.setTimeout(() => {
+        $("#locationGroup").css("visibility", "visible");
+        $("#locationSearch").val("");
+    }, 1500);
+}

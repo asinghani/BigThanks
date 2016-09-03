@@ -1,6 +1,17 @@
 <template name="volunteerOpportunities">
-    Map
+    <div class="input-group" id="locationGroup" style="visibility: hidden">
+        <span class="input-group-addon">
+            <i class="fa fa-search"></i>
+        </span>
+        <input type="text" class="form-control" id="locationSearch" placeholder="Search Location">
+    </div>
+
+    <div id="map" style="display:none;"></div>
+    <input type="hidden" id="lat">
+    <input type="hidden" id="long">
+
     <br>
+    <div id="opportunityMap"></div>
     <br>
     <br>
 

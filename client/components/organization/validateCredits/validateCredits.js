@@ -60,7 +60,8 @@ Template.validateCredits.helpers({
             rowsPerPage: 10,
             showFilter: false,
             fields: f,
-            noDataTmpl: Template.validateCreditsPlaceholder
+            noDataTmpl: Template.validateCreditsPlaceholder,
+            rowClass: (req) => req._id === window.location.hash.substr(1) ? "flash-cell" : "default"
         };
     }
 });

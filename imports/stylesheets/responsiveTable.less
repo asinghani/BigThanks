@@ -71,3 +71,30 @@
   #table-responsive-xs.organization-accounts-table td:nth-of-type(2):before { content: " Email"; }
   #table-responsive-xs.organization-accounts-table td:nth-of-type(3):before { content: " Permission Level"; }
 }
+
+@-webkit-keyframes flash {
+  from { background-color: @brand-warning; }
+  to { background-color: inherit; }
+}
+@-moz-keyframes flash {
+  from { background-color: @brand-warning; }
+  to { background-color: inherit; }
+}
+@-o-keyframes flash {
+  from { background-color: @brand-warning; }
+  to { background-color: inherit; }
+}
+@keyframes flash {
+  from { background-color: @brand-warning; }
+  to { background-color: inherit; }
+}
+/*.flash-cell {
+  -webkit-animation: flash 2.5s;
+  -moz-animation:    flash 2.5s;
+  -o-animation:      flash 2.5s;
+  animation:         flash 2.5s;
+}*/
+
+.flash-cell {
+  background-color: lighten(@brand-warning, 25%) !important;
+}

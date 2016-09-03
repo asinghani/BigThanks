@@ -97,7 +97,12 @@ Template.organizationOpportunities.helpers({
             showFilter: true,
             fields: f,
             noDataTmpl: Template.organizationTablePlaceholder,
-            rowClass: (obj) => obj.public ? "default" : "warning"
+            rowClass: (obj) => {
+                console.log(obj._id + "  " + window.location.hash.substr(1));
+                if(!obj.public) return "warning";
+                if(obj._id === window.location.hash.substr(1)) return "flash-cell";
+                return "default";
+            }
         };
     }
 });
