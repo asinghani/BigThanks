@@ -20,3 +20,40 @@ body {
 .date-picker {
   width:200px;
 }
+
+@media(max-width:768px) {
+  .responsive-xs{
+    &:extend(.table-responsive);
+  }
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.428571429;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  font-size: 18px;
+  line-height: 1.33;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  border-radius: 35px;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+select:disabled {
+  background-color: rgb(235, 235, 228) !important;
+  color: rgb(84,84,84);
+}

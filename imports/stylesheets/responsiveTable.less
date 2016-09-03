@@ -1,0 +1,73 @@
+@media only screen and (max-width: 1000px) {
+
+  #table-responsive-xs .table-striped > tbody > tr:nth-child(2n+1) > td, #table-responsive-xs .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #eee;
+  }
+
+  #table-responsive-xs table,
+  #table-responsive-xs thead,
+  #table-responsive-xs tbody,
+  #table-responsive-xs th,
+  #table-responsive-xs td,
+  #table-responsive-xs tr {
+    display: block;
+  }
+
+  #table-responsive-xs thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  #table-responsive-xs tr { border: 1px solid #ccc; }
+
+  #table-responsive-xs td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+    white-space: normal;
+    text-align:left;
+  }
+
+  #table-responsive-xs td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align:left;
+    font-weight: bold;
+  }
+
+  // Volunteer Opportunities Table Column Headings
+  #table-responsive-xs.volunteer-opportunity-table td:nth-of-type(1):before { content: " Date";}
+  #table-responsive-xs.volunteer-opportunity-table td:nth-of-type(2):before { content: " Title"; }
+  #table-responsive-xs.volunteer-opportunity-table td:nth-of-type(3):before { content: " Description"; }
+  #table-responsive-xs.volunteer-opportunity-table td:nth-of-type(4):before { content: " Length"; }
+  #table-responsive-xs.volunteer-opportunity-table td:nth-of-type(5):before { content: " Location"; }
+  #table-responsive-xs.volunteer-opportunity-table td:nth-of-type(6):before { content: " Organizer"; }
+  #table-responsive-xs.volunteer-opportunity-table td:nth-of-type(7):before { content: " Contact"; }
+
+  // Validate Credits Table Column Headings
+  #table-responsive-xs.validate-credits-table td:nth-of-type(1):before { content: " Date";}
+  #table-responsive-xs.validate-credits-table td:nth-of-type(2):before { content: " Volunteer Opportunity"; }
+  #table-responsive-xs.validate-credits-table td:nth-of-type(3):before { content: " Time Volunteered"; }
+  #table-responsive-xs.validate-credits-table td:nth-of-type(4):before { content: " Name"; }
+  #table-responsive-xs.validate-credits-table td:nth-of-type(5):before { content: " Actions"; }
+
+  // Organization Opportunities Table Column Headings
+  #table-responsive-xs.organization-opportunity-table td:nth-of-type(1):before { content: " Date";}
+  #table-responsive-xs.organization-opportunity-table td:nth-of-type(2):before { content: " Title"; }
+  #table-responsive-xs.organization-opportunity-table td:nth-of-type(3):before { content: " Description"; }
+  #table-responsive-xs.organization-opportunity-table td:nth-of-type(4):before { content: " Length"; }
+  #table-responsive-xs.organization-opportunity-table td:nth-of-type(5):before { content: " Location"; }
+  #table-responsive-xs.organization-opportunity-table td:nth-of-type(6):before { content: " Contact"; }
+  #table-responsive-xs.organization-opportunity-table td:nth-of-type(7):before { content: " Public"; }
+
+  // Organization Accounts Table Column Headings
+  #table-responsive-xs.organization-accounts-table td:nth-of-type(1):before { content: " Name";}
+  #table-responsive-xs.organization-accounts-table td:nth-of-type(2):before { content: " Email"; }
+  #table-responsive-xs.organization-accounts-table td:nth-of-type(3):before { content: " Permission Level"; }
+}

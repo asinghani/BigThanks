@@ -1,6 +1,5 @@
 import { Template } from "meteor/templating";
 import { Organizations } from "/imports/api/organizations.js";
-import { Mongo } from "meteor/mongo";
 
 import "./volunteerOpportunities.html";
 
@@ -66,7 +65,7 @@ Template.volunteerOpportunities.helpers({
             label: "Contact",
             key: "contact",
             fn: (contact) => {
-                return new Spacebars.SafeString(`<a href="mailto:${_.escape(contact)}">${_.escape(contact)}</a>`);
+                return new Spacebars.SafeString(`<a href="mailto:${_.escape(contact)}">${Meteor.isCordova ? "Click here" : _.escape(contact).replace("@", "@<wbr>")}</a>`);
             }
         }];
 
@@ -77,6 +76,8 @@ Template.volunteerOpportunities.helpers({
             if (opportunities){
                 opportunities.forEach((opportunity) => {
                     if(!opportunity.public) return;
+                    if(opportunity.deleted) return;
+                    if(moment.unix(opportunity.endDate).isBefore(moment())) return;
                     opportunity.organizer = organization._id;
                     data.push(opportunity);
                 });

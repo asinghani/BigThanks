@@ -1,6 +1,12 @@
 <template name="organizationOpportunities">
 
-    {{> reactiveTable settings=volunteerTable}}
+    <a href="#" id="add-btn" class="btn btn-primary">
+        <i class="fa fa-plus"></i> Add Volunteer Opportunity
+    </a>
+
+    <div id="table-responsive-xs" class="organization-opportunity-table">
+        {{> reactiveTable settings=volunteerTable}}
+    </div>
 
     <!-- Edit dialog box -->
     <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
@@ -11,7 +17,14 @@
                     <h4 class="modal-title">Edit Volunteer Opportunity</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal">
+                    <div class="alert alert-danger" id="invalid-email" role="alert">
+                        Please enter a valid email address.
+                    </div>
+                    <div class="alert alert-danger" id="fill-all" role="alert">
+                        Please fill all fields to continue.
+                    </div>
+                    <br>
+                    <form class="form-horizontal" data-toggle="validator">
 
                         <div class="form-group">
                             <label class="col-sm-3 control-label">
@@ -47,15 +60,80 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div id="emailGroup" class="form-group has-feedback">
                             <label class="col-sm-3 control-label">
-                                Opportunity Description
+                                Contact Email
                             </label>
                             <div class="col-sm-8">
-                                <textarea class="form-control" rows="4" id="desc"></textarea>
+                                <input type="email" class="form-control" id="email">
+                                <i id="feedbackIcon" class="fa form-control-feedback"></i>
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Opportunity Duration
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </span>
+                                    <span id="durationMinContainer">
+                                        <input type="text" class="form-control duration-picker" id="durationMin">
+                                    </span>
+                                    <span class="input-group-addon">to</span>
+                                    <span id="durationMaxContainer">
+                                        <input type="text" class="form-control duration-picker" id="durationMax">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Name of Location
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="location">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Address
+                            </label>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="address">
+                                </div>
+                            </div>
+                            <div id="map" style="display:none;"></div>
+                            <input type="hidden" id="lat">
+                            <input type="hidden" id="long">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Public?
+                            </label>
+                            <div class="col-sm-8">
+                                <select id="publicity" class="form-control">
+                                    <option value="true">Public</option>
+                                    <option value="false">Private</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label"></label>
+                            <div class="col-sm-8">
+                                <a href="#" id="delete-btn" style="display:none;" class="btn btn-danger">Delete Volunteer Opportunity</a>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">

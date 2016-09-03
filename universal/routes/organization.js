@@ -53,4 +53,34 @@ export default () => {
         },
         name: "organizationOpportunities"
     });
-}
+
+    organizationRoutes.route("/validate", {
+        action() {
+            BlazeLayout.render("fullWidthLayout", {
+                content: "validateCredits",
+                nav: "organizationNav"
+            });
+        },
+        name: "validateCredits"
+    });
+
+    organizationRoutes.route("/accounts", {
+        action() {
+            BlazeLayout.render("fullWidthLayout", {
+                content: "organizationAccounts",
+                nav: "organizationNav"
+            });
+        },
+        name: "organizationAccounts"
+    });
+
+    organizationRoutes.route("/settings", {
+        action() {
+            BlazeLayout.render("fullWidthLayout", {
+                content: "organizationSettings",
+                nav: "organizationNav"
+            });
+        },
+        name: "organizationSettings"
+    });
+};
