@@ -89,7 +89,7 @@ Template.validateCredits.events({
             return;
         }
 
-        Meteor.call("request.confirm", req.userId, Meteor.user().profile.organization, req._id, 1, "", req.time);
+        Meteor.call("organization.request.confirm", req.userId, Meteor.user().profile.organization, req._id, 1, "", req.time);
     },"click .deny-btn"(event){
         event.preventDefault();
         let id = $(event.target).attr("data-id");
@@ -120,7 +120,7 @@ Template.validateCredits.events({
             closeOnConfirm: true,
             inputPlaceholder: "For example, you can write \"wrong organization\" or \"incorrect time\""
         }, (val) => {
-            Meteor.call("request.confirm", req.userId, Meteor.user().profile.organization, req._id, 2, val, req.time);
+            Meteor.call("organization.request.confirm", req.userId, Meteor.user().profile.organization, req._id, 2, val, req.time);
         });
 
     }

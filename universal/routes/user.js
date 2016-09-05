@@ -47,4 +47,17 @@ export default () => {
         },
         name: "requestCredits"
     });
+
+    userRoutes.route("/redeem-credits", {
+        subscriptions() {
+            this.register("items", Meteor.subscribe("items"));
+        },
+        action() {
+            BlazeLayout.render("layout", {
+                content: "redeemCredits",
+                nav: "userNav"
+            });
+        },
+        name: "redeemCredits"
+    });
 };

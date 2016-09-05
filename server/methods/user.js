@@ -2,62 +2,83 @@ import { Organizations } from "/imports/api/organizations.js";
 import { Email } from "meteor/email";
 
 Meteor.methods({
+
+    /**
+     * Mark a history item / validation as already viewed
+     */
+    "user.history.resetNew"(id) {
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+        Meteor.users.update({_id: Meteor.userId(), "profile.history._id" : id}, {$set: {"profile.history.$.new": false}});
+    },
+
+    /**
+     * Send a credit validation request
+     */
+    "request.send"(opportunityName, time, organizationId){
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        let id = new Mongo.ObjectID()._str;
+        let timestamp = moment().unix();
+        Meteor.users.update({ _id: Meteor.userId() }, {$push: {
+            "profile.history": {
+                _id: id,
+                timestamp: timestamp,
+                opportunity: opportunityName,
+                length: time,
+                credits: time,
+                validator: organizationId,
+                status: 0,
+                new: false,
+                comment: ""
+            }
+        }});
+        Organizations.update({ _id: new Mongo.ObjectID(organizationId) }, {$push: {
+            requests: {
+                _id: id,
+                userId: Meteor.userId(),
+                reqId: id,
+                name: opportunityName,
+                time: time,
+                timestamp: timestamp,
+                userName: Meteor.user().profile.name
+            }
+        }});
+    },
+
+    /**
+     * Update user's name
+     */
     "user.updateName"(name) {
-        if (!this.userId) {
+        if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
+
+        if(!name){
+            throw new Meteor.Error("invalid-args")
+        }
+
         Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.name": name}});
-    }, "organization.update"(name, website) {
-        if (!this.userId) {
+    },
+
+    /**
+     * Send reset password email
+     */
+    "user.resetPassword"() {
+        if (!Meteor.userId()) {
             throw new Meteor.Error("not-authorized");
         }
-        Organizations.update({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}, {$set: {name: name, website: website}});
-    }, "user.resetPassword"() {
-        if (!this.userId) {
-            throw new Meteor.Error("not-authorized");
-        }
-        Accounts.sendResetPasswordEmail(this.userId);
-    }, "user.resetPasswordOther"(id) {
-        if (!id) {
-            throw new Meteor.Error("not-authorized");
-        }
-        Accounts.sendResetPasswordEmail(id);
-    }, "user.get"(id){
-        return Meteor.users.find({_id: id}).fetch()[0];
-    }, "user.delete"(id){
-        Meteor.users.remove({_id: id});
-    }, "user.permission.set"(id, permission){
-        Roles.removeUsersFromRoles(id, ["organization_opportunities", "organization_admin", "organization_validate"]);
-        switch(permission){
-            case "admin":
-                Roles.addUsersToRoles(id, "organization_admin");
-                break;
-            case "opportunities":
-                Roles.addUsersToRoles(id, "organization_opportunities");
-                break;
-            case "validate":
-                Roles.addUsersToRoles(id, "organization_validate");
-                break;
-            case "opportunities_validate":
-                Roles.addUsersToRoles(id, "organization_opportunities");
-                Roles.addUsersToRoles(id, "organization_validate");
-                break;
-        }
-    }, "organization.user.add"(email, organization){
-        let id = Accounts.findUserByEmail(email)._id;
 
-        Meteor.users.update({ _id: id}, {$set: {
-            "profile.organization": organization
-        }});
+        Accounts.sendResetPasswordEmail(Meteor.userId());
+    },
 
-        Organizations.update({ _id: new Mongo.ObjectID(organization) }, {$push: {
-            users: id
-        }});
-
-        Roles.addUsersToRoles(id, "organization");
-        Roles.addUsersToRoles(id, "organization_opportunities");
-        Roles.addUsersToRoles(id, "organization_validate");
-    }, "contact.submit"(name, email, subject, message){
+    /**
+     * Contact form submitted
+     */
+    "contact.submit"(name, email, subject, message){
         let confirmation = `
             Big Thanks contact form has been submitted. You will receive a reply in 1-2 business days.
             <h3>Submitted Information:</h3>

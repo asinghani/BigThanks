@@ -48,8 +48,9 @@ Template.organizationAccounts.helpers({
 
         Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].users.forEach((userId) => {
             try{
-                var user = ReactiveMethod.call("user.get", userId, renderId);
+                var user = ReactiveMethod.call("organization.user.get", userId, renderId);
             } catch(e){
+                console.err(e);
                 return;
             }
             if(!user) return;
@@ -93,7 +94,7 @@ Template.organizationAccounts.helpers({
 Template.organizationAccounts.events({
     "click .btn-reset"(event){
         event.preventDefault();
-        Meteor.call("user.resetPasswordOther", $(event.target).attr("data-id"));
+        Meteor.call("organization.user.resetPassword", $(event.target).attr("data-id"));
         swal("Password Reset", "An email has been sent to the user to reset their password", "success");
     }, "click .btn-delete"(event){
         event.preventDefault();
@@ -107,7 +108,7 @@ Template.organizationAccounts.events({
             cancelButtonText: "Cancel",
             closeOnConfirm: true
         }, () => {
-            Meteor.call("user.delete", $(event.target).attr("data-id"), () => {
+            Meteor.call("organization.user.delete", $(event.target).attr("data-id"), () => {
                 Organizations.update({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}, {$pull: {users: $(event.target).attr("data-id")} });
                 Meteor.setTimeout(() => {
                     accountsDep.changed();
@@ -129,7 +130,7 @@ Template.organizationAccounts.events({
     }, "change .permission-select"(event){
         let permission = $(event.target).val();
         let userId = $(event.target).attr("data-id");
-        Meteor.call("user.permission.set", userId, permission);
+        Meteor.call("organization.user.permission.set", userId, permission);
     }, "keyup #email"(event){
         if(validEmail.exec($("#email").val())){
             $("#emailGroup").removeClass("has-error").addClass("has-success");
@@ -141,7 +142,7 @@ Template.organizationAccounts.events({
             $(".add-btn").attr("disabled", "true");
         }
     }, "click .add-btn"(event){
-        Meteor.call("organization.user.add", $("#email").val(), Meteor.user().profile.organization, () => {
+        Meteor.call("organization.user.add", $("#email").val(), () => {
             accountsDep.changed();
             renderId++;
             $("#email").val("");

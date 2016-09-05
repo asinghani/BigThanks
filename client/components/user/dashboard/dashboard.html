@@ -4,10 +4,11 @@
             <div class="visible-xs-block visible-sm-block">
                 <br>
             </div>
-            <h2>Welcome, {{currentUser.profile.name}}</h2>
+            <h2 id="welcomeLabel" style="display:inline-block; padding-right: 50px">Welcome, {{currentUser.profile.name}}</h2>
             <br>
-            <p class="small-title">Total hours volunteered: {{currentUser.profile.totalHours}}</p>
-            <p class="small-title">Current credits available: {{currentUser.profile.credits}}</p>
+            <span class="small-title" style="padding-right: 50px;" id="infoLabel">Total hours volunteered: {{currentUser.profile.totalHours}}</span>
+            <br>
+            <span class="small-title">Current credits available: {{currentUser.profile.credits}}</span>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-offset-0 col-xs-offset-2">
             <div class="visible-xs-block visible-sm-block">
@@ -26,7 +27,7 @@
     </div>
     <br>
 
-    <div class="responsive-xs">
+    <div class="responsive-xs" id="historyTable" style="display:inline-block;">
         {{> reactiveTable settings=historyTable}}
     </div>
 </template>

@@ -50,7 +50,7 @@ export default () => {
         },
         postSignUpHook: (userId) => {
             // Running on server-side, see https://github.com/meteor-useraccounts/core/blob/master/Guide.md
-            Meteor.users.update({_id: userId}, {$set: {"profile.totalHours": 0, "profile.credits": 0, "profile.history": []}});
+            Meteor.users.update({_id: userId}, {$set: {"profile.totalHours": 0, "profile.credits": 5, "profile.history": [], "firstLogin": true}});
         },
 
         // Texts
@@ -60,6 +60,11 @@ export default () => {
             },
             title: {
                 forgotPwd: "Forgot Your Password?"
+            },
+            errors: {
+                captchaVerification: "Captcha verification failed!",
+                loginForbidden: "Incorrect Email or Password",
+                mustBeLoggedIn: "Must be logged in to access this page"
             }
         },
         reCaptcha: {

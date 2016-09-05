@@ -15,7 +15,8 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="{{isActiveRoute 'home'}}"><a href="/">Home</a></li>
-                    <li class="{{isActiveRoute 'volunteerOpportunities'}}"><a href="/volunteer-opportunities">Volunteer Opportunities</a></li>
+                    <li class="{{isActiveRoute 'volunteerOpportunities'}}"><a href="/volunteer-opportunities"
+                                                                              id="volunteerOpportunitiesBtn">Volunteer Opportunities</a></li>
                     <li class="{{isActiveRoute 'dashboard'}}"><a href="/user/dashboard">Dashboard</a></li>
                     <li class="{{isActiveRoute 'contact'}}"><a href="/contact">Contact us</a></li>
                     <li class="{{isActiveRoute 'help'}}"><a href="/help">Help</a></li>
@@ -23,7 +24,10 @@
 
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="{{isActiveRoute 'requestCredits'}}"><a href="/user/request-credits">Request Validation</a></li>
+                    <li class="{{isActiveRoute 'redeemCredits'}}"><a href="/user/redeem-credits"
+                                                                     id="redeemBtn">Redeem Credits</a></li>
+                    <li class="{{isActiveRoute 'requestCredits'}}"><a href="/user/request-credits"
+                                                                              id="requestBtn">Request Validation</a></li>
                     <li class="{{isActiveRoute 'accountSettings'}}"><a href="/user/account-settings">Account Settings</a></li>
                     <li class="navbar-spacer">_</li>
                     <li>{{> atNavButton}}</li>
@@ -32,4 +36,7 @@
             </div>
         </div>
     </nav>
+    <script src="/tour.js">
+
+    </script>
 </template>

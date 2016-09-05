@@ -28,8 +28,9 @@ Template.organizationDashboard.helpers({
         let data = [];
         Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].users.forEach((userId) => {
             try{
-                var user = ReactiveMethod.call("user.get", userId, 0);
+                var user = ReactiveMethod.call("organization.user.get", userId, 0);
             } catch(e){
+                console.err(e);
                 return;
             }
             if(!user) return;

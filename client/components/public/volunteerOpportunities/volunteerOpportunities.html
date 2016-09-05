@@ -1,21 +1,66 @@
 <template name="volunteerOpportunities">
-    <div class="input-group" id="locationGroup" style="visibility: hidden">
+    <div id="map-group">
+        <div class="input-group" id="locationGroup" style="visibility: hidden">
         <span class="input-group-addon">
             <i class="fa fa-search"></i>
         </span>
-        <input type="text" class="form-control" id="locationSearch" placeholder="Search Location">
+            <input type="text" class="form-control" id="locationSearch" placeholder="Search Location">
+        </div>
+
+        <div id="map" style="display:none;"></div>
+        <input type="hidden" id="lat">
+        <input type="hidden" id="long">
+
+        <br>
+        <div id="opportunityMap"></div>
+        <br>
+        <br>
     </div>
-
-    <div id="map" style="display:none;"></div>
-    <input type="hidden" id="lat">
-    <input type="hidden" id="long">
-
-    <br>
-    <div id="opportunityMap"></div>
-    <br>
-    <br>
 
     <div id="table-responsive-xs" class="volunteer-opportunity-table">
         {{> reactiveTable settings=volunteerTable}}
+    </div>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="detailModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close close-btn" aria-label="Close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Volunteer Opportunity Information</h4>
+                </div>
+                <div class="modal-body">
+                    <b>Title: </b>
+                    <span id="modal_title"></span>
+                    <br><br>
+
+                    <b>Date: </b>
+                    <span id="modal_date"></span>
+                    <br><br>
+
+                    <b>Description: </b>
+                    <span id="modal_desc"></span>
+                    <br><br>
+
+                    <b>Length: </b>
+                    <span id="modal_length"></span>
+                    <br><br>
+
+                    <b>Location: </b>
+                    <span id="modal_location"></span>
+                    <br><br>
+
+                    <b>Organizer: </b>
+                    <span id="modal_organizer"></span>
+                    <br><br>
+
+                    <b>Contact: </b>
+                    <span id="modal_contact"></span>
+                    <br><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-btn" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 </template>

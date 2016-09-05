@@ -28,7 +28,6 @@ spacebars@1.0.12
 check@1.2.3
 reactive-dict@1.1.8
 
-autopublish@1.0.7
 insecure@1.0.7
 
 # Community Packages
@@ -41,7 +40,6 @@ meteorhacks:fast-render
 johnantoni:meteor-normalize
 ostrio:templatehelpers
 standard-minifier-js@1.1.8
-simple:dev-error-overlay
 babrahams:constellation
 fortawesome:fontawesome
 alanning:roles
@@ -67,3 +65,10 @@ raix:handlebar-helpers
 reactive-var
 simple:reactive-method
 mnmtanish:call
+tarang:ssl
+nourharidy:ssl
+flowkey:bootstrap-tour
+meteorhacks:picker
+ongoworks:security
+meteorhacks:aggregate
+autopublish

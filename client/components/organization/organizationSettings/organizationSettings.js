@@ -25,5 +25,5 @@ Template.organizationSettings.onRendered(() => {
     Meteor.setTimeout(() => {
         $("#name").val(Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].name);
         $("#website").val(Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].website);
-    }, 0);
+    }, 100);
 });

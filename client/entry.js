@@ -15,7 +15,6 @@ Tracker.autorun(() => {
 
 AccountsTemplates._initialized = false;
 
-// Always first for configuration
 setupAccounts();
 
 // Main routes
@@ -24,7 +23,7 @@ createUserRoutes();
 createOrganizationRoutes();
 createPublicRoutes();
 
-AccountsTemplates._init(); // Hack to prevent "Routes before init" error
+AccountsTemplates._init();
 
 // Extra debug code
 import setupDebug from "../universal/debug.js";
