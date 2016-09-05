@@ -178,7 +178,7 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        let user = Meteor.users.find({_id: id}).fetch()[0];
+        let user = Meteor.users.find({_id: userId}).fetch()[0];
         if (!user || !user.profile) {
             throw new Meteor.Error("invalid-args");
         }

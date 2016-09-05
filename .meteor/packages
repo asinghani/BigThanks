@@ -19,7 +19,7 @@ ecmascript@0.5.7              # Enable ECMAScript2015+ syntax in app code
 underscore@1.0.9
 accounts-password@1.2.12
 fastclick@1.0.12
-browser-policy@1.0.9
+browser-policy
 logging@1.1.14
 reload@1.1.10
 random@1.0.10
@@ -72,3 +72,5 @@ meteorhacks:picker
 ongoworks:security
 meteorhacks:aggregate
 autopublish
+meteorhacks:ssr
+audit-argument-checks
