@@ -1,6 +1,17 @@
 <template name="layout">
     {{> Template.dynamic template=nav}}
-    <div class="container">
+    <div style="background-image: url(/texture.jpg); min-height:200px; padding-top:70px;">
+        <div class="container">
+            <h1 class="top-heading">
+                {{attr.title}}
+                <br>
+                <small class="top-subheading">
+                    {{attr.subtitle}}
+                </small>
+            </h1>
+        </div>
+    </div>
+    <div class="container" style="padding-top: 25px;">
         {{> Template.dynamic template=content}}
     </div>
     {{> Template.dynamic template=extra}}

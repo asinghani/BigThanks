@@ -16,7 +16,11 @@ export default () => {
         action() {
             BlazeLayout.render(getLayout(), {
                 content: "help",
-                nav: getNav()
+                nav: getNav(),
+                attr: {
+                    title: "cow",
+                    subtitle: "fig banana"
+                }
             });
         },
         name: "help"
