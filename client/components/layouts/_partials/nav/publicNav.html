@@ -1,5 +1,5 @@
 <template name="publicNav">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -12,17 +12,18 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li class="{{isActiveRoute regex='^home'}}"><a href="/">Home</a></li>
                     <li class="{{isActiveRoute 'volunteerOpportunities'}}"><a href="/volunteer-opportunities">Volunteer Opportunities</a></li>
                     <li class="{{isActiveRoute 'contact'}}"><a href="/contact">Contact us</a></li>
                     <li class="{{isActiveRoute 'help'}}"><a href="/help">Help</a></li>
+
+                    <li>{{> atNavButton}}</li>
+                    <li class="navbar-spacer">_</li>
                 </ul>
 
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li>{{> atNavButton}}</li>
-                    <li class="navbar-spacer">_</li>
                 </ul>
             </div>
         </div>

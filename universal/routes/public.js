@@ -4,10 +4,7 @@ export default () => {
     var publicRoutes = FlowRouter.group({});
     publicRoutes.route("/", {
         action() {
-            BlazeLayout.render(getLayout(), {
-                content: "home",
-                nav: getNav()
-            });
+            BlazeLayout.render("home");
         },
         name: "home"
     });
@@ -18,8 +15,8 @@ export default () => {
                 content: "help",
                 nav: getNav(),
                 attr: {
-                    title: "cow",
-                    subtitle: "fig banana"
+                    title: "Help",
+                    subtitle: "---"
                 }
             });
         },
@@ -30,7 +27,10 @@ export default () => {
         action() {
             BlazeLayout.render(getLayout(), {
                 content: "contact",
-                nav: getNav()
+                nav: getNav(),
+                attr: {
+                    title: "Contact Us"
+                }
             });
         },
         name: "contact"
@@ -40,7 +40,11 @@ export default () => {
         action() {
             BlazeLayout.render(getLayout(), {
                 content: "volunteerOpportunities",
-                nav: getNav()
+                nav: getNav(),
+                attr: {
+                    title: "Volunteer Opportunities",
+                    subtitle: "Find and sign up for nearby volunteer opportunities."
+                }
             });
         },
         name: "volunteerOpportunities"

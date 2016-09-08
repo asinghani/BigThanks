@@ -28,6 +28,8 @@ export default () => {
         layoutTemplate: getLayout(),
         layoutRegions: {
             nav: getNav()
+        }, attr: {
+            title: "Change Password"
         }
     });
 

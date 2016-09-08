@@ -134,3 +134,98 @@
     margin-left: auto;
   }
 }
+
+
+@theme-primary:    #F05F40;
+
+@gray-base:        #000;
+@gray-darker:      lighten(@gray-base, 13.5%); // #222
+@gray-dark:        lighten(@gray-base, 20%);   // #333
+@gray:             lighten(@gray-base, 33.5%); // #555
+@gray-light:       lighten(@gray-base, 46.7%); // #777
+@gray-lighter:     lighten(@gray-base, 93.5%); // #eee
+
+
+.navbar-default {
+  background-color: white;
+  border-color: fade(@gray-darker, 5%);
+  //.sans-serif-font;
+  //.transition-all;
+  .navbar-header .navbar-brand {
+    color: @theme-primary;
+    //.sans-serif-font;
+    font-weight: 700;
+    text-transform: uppercase;
+    &:hover,
+    &:focus {
+      color: darken(@theme-primary, 10%);
+    }
+  }
+  .navbar-header .navbar-toggle {
+    font-weight: 700;
+    font-size: 12px;
+    color: @gray-darker;
+    text-transform: uppercase;
+  }
+  .nav {
+    > li {
+      > a,
+      > a:focus {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 13px;
+        color: @gray-darker;
+        &:hover {
+          color: @theme-primary;
+        }
+      }
+      &.active {
+        > a,
+        > a:focus {
+          color: @theme-primary !important;
+          background-color: transparent;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    background-color: transparent;
+    //border-color: fade(white, 30%);
+    .navbar-header .navbar-brand {
+      color: fade(white, 70%);
+      &:hover,
+      &:focus {
+        color: white;
+      }
+    }
+    .nav > li > a,
+    .nav > li > a:focus {
+      color: fade(white, 70%);
+      &:hover {
+        color: white;
+      }
+    }
+    &.affix {
+      background-color: white;
+      border-color: fade(@gray-darker, 5%);
+      .navbar-header .navbar-brand {
+        color: @theme-primary;
+        font-size: 14px;
+        &:hover,
+        &:focus {
+          color: darken(@theme-primary, 10%);
+        }
+      }
+      .nav > li > a,
+      .nav > li > a:focus {
+        color: @gray-darker;
+        &:hover {
+          color: @theme-primary;
+        }
+      }
+    }
+  }
+}

@@ -21,7 +21,10 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "dashboard",
-                nav: "userNav"
+                nav: "userNav",
+                attr: {
+                    title: "Big Thanks"
+                }
             });
         },
         name: "dashboard"
