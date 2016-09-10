@@ -73,3 +73,4 @@ meteorhacks:aggregate
 autopublish
 meteorhacks:ssr
 audit-argument-checks
+meteorhacks:kadira

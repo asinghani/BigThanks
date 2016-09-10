@@ -1,7 +1,6 @@
-<template name="layout">
-
-    {{> userNav}}
-    <div style="background-image: url(/images/header.jpg); min-height:200px; padding-top:70px;">
+<template name="layoutbackup">
+    {{> Template.dynamic template=nav}}
+    <div style="background-image: url(/images/header.jpg); min-height:200px; padding-top:20px;">
         <div class="container">
             <h1 class="top-heading">
                 {{attr.title}}
@@ -13,9 +12,7 @@
         </div>
     </div>
     <div class="container" style="padding-top: 25px;">
-        {{> verifyEmail}}
         {{> Template.dynamic template=content}}
     </div>
-
     {{> Template.dynamic template=extra}}
 </template>

@@ -12,6 +12,8 @@ if(Meteor.isDevelopment){
     setupDebug();
 }
 
+Kadira.connect(Meteor.settings.private.kadira.appId, Meteor.settings.private.kadira.appSecret);
+
 //Picker.route('/', function(params, req, res, next) {
 //    res.end("cow");
 //});

@@ -63,7 +63,11 @@
             <div class="container text-center">
                 <div class="call-to-action">
                     <h2>Get Started Now!</h2>
-                    <a href="/sign-up" class="btn btn-default-borderless btn-rounded btn-xlarge page-scroll sr-button">Sign Up</a>
+                    {{#if currentUser}}
+                        <a href="/user/dashboard" class="btn btn-default-borderless btn-rounded btn-xlarge page-scroll sr-button">Dashboard</a>
+                    {{else}}
+                        <a href="/sign-up" class="btn btn-default-borderless btn-rounded btn-xlarge page-scroll sr-button">Sign Up</a>
+                    {{/if}}
                 </div>
             </div>
         </aside>

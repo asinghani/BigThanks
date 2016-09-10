@@ -18,6 +18,7 @@ export default (BrowserPolicy) => {
     BrowserPolicy.content.allowConnectOrigin("https://bigthanks.dev");
     BrowserPolicy.content.allowConnectOrigin("ws://bigthanks.dev");
     BrowserPolicy.content.allowConnectOrigin("wss://bigthanks.dev");
+    BrowserPolicy.content.allowConnectOrigin("https://enginex.kadira.io/simplentp/sync");
 };
 
 Meteor.startup(() => {

@@ -11,7 +11,7 @@ $(function (){
         steps: [
             {
                 element: "#welcomeLabel",
-                title: "Dashboard",
+                title: "Welcome, "+Meteor.user().profile.name,
                 content: "This is your dashboard. Here, you can see your past volunteer history, redeem your credits, and search for volunteer opportunities",
                 path: "/user/dashboard",
                 placement: "auto right"
@@ -46,17 +46,15 @@ $(function (){
                 title: "Volunteer Opportunities List",
                 content: "This list shows all available volunteer opportunities. To sign up, contact the organizer using the email address they have provided.",
                 path: "/volunteer-opportunities",
-                placement: "auto top",
-                backdrop: true
+                placement: "auto top"
             },
 
             {
                 element: "#map-group",
                 title: "Volunteer Opportunities Map",
-                content: "With this map, you can search for possible volunteer opportunities near you.",
+                content: "With this map, you can search for potential volunteer opportunities near you.",
                 path: "/volunteer-opportunities",
-                placement: "auto bottom",
-                backdrop: true
+                placement: "auto bottom"
             },
 
             {

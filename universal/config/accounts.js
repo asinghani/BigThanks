@@ -44,7 +44,7 @@ export default () => {
         },
         postSignUpHook: (userId) => {
             // Running on server-side, see https://github.com/meteor-useraccounts/core/blob/master/Guide.md
-            Meteor.users.update({_id: userId}, {$set: {"profile.totalHours": 0, "profile.credits": 5, "profile.history": [], "firstLogin": true}});
+            Meteor.users.update({_id: userId}, {$set: {"profile.totalHours": 0, "profile.credits": 5, "profile.history": [], "profile.firstLogin": true}});
         },
 
         // Texts

@@ -15,7 +15,7 @@ Template.contact.events({
             return;
         }
 
-        $("#submit-btn").removeClass("btn-outline").html(spinner+" Submitting...");
+        $("#submit-btn").removeClass("btn-outline").html(spinner+" Submitting...").attr("disabled", "false");
 
         Meteor.call("contact.submit", form.name.value, form.email.value, form.subject.value, form.message.value, () => {
             swal("Submitted", "The contact form has been submitted. You will receive an email confirmation soon, and a reply in 1-2 business days.",
@@ -26,7 +26,7 @@ Template.contact.events({
             $("#subject").val("");
             $("#message").val("");
 
-            $("#submit-btn").addClass("btn-outline").html("Submit");
+            $("#submit-btn").addClass("btn-outline").html("Submit").attr("disabled", "false");
         });
 
     }
@@ -45,5 +45,10 @@ Template.contact.onRendered(() => {
         let e = atob(email) + "@" + atob(email2);
 
         $("#contact-email").html(e).attr("href", "mailto:"+e);
+
+        if(Meteor.user() && Meteor.user().emails[0].address && Meteor.user().profile.name){
+            $("#name").val(Meteor.user().profile.name);
+            $("#email").val(Meteor.user().emails[0].address);
+        }
     }, 0);
 });

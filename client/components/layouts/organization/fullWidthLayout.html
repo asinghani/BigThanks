@@ -6,6 +6,12 @@
     <div id="wrapper">
         {{> Template.dynamic template=nav}}
         <div id="page-wrapper">
+            <div>
+                <h1>
+                    {{attr.title}}
+                </h1>
+                <hr>
+            </div>
             {{> Template.dynamic template=content}}
         </div>
     </div>

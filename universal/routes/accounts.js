@@ -45,17 +45,18 @@ export default () => {
         path: "/change-password",
         layoutTemplate: getLayout(),
         layoutRegions: {
-            nav: getNav()
-        }, attr: {
-            title: "Change Password"
+            nav: getNav(),
+            attr: {
+                title: "Change Password"
+            }
         }
     });
 
     // Allow /sign-out route for links
     FlowRouter.route("/sign-out", {
-        action(ctx, redirect) {
+        action() {
             AccountsTemplates.logout();
-            redirect("logged-out");
+            FlowRouter.redirect("logged-out");
         },
         name: "logout"
     });

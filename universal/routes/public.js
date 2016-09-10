@@ -37,12 +37,29 @@ export default () => {
 
     publicRoutes.route("/contact", {
         action() {
-            BlazeLayout.render("publicLayout", {
-                content: "contact",
-                attr: {
-                    title: "Contact Us"
-                }
-            });
+            if(!Meteor.user()){
+                BlazeLayout.render("publicLayout", {
+                    content: "contact",
+                    attr: {
+                        title: "Contact Us"
+                    }
+                });
+            } else if(Roles.userIsInRole(Meteor.user(), "organization")) {
+                BlazeLayout.render("fullWidthLayout", {
+                    nav: "organizationNav",
+                    content: "contact",
+                    attr: {
+                        title: "Contact Us"
+                    }
+                });
+            } else {
+                BlazeLayout.render("layout", {
+                    content: "contact",
+                    attr: {
+                        title: "Contact Us"
+                    }
+                });
+            }
         },
         name: "contact"
     });

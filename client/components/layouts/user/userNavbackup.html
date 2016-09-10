@@ -1,0 +1,42 @@
+<template name="userNavbackup">
+    {{> verifyEmail}}
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Big Thanks</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="{{isActiveRoute 'home'}}"><a href="/">Home</a></li>
+                    <li class="{{isActiveRoute 'volunteerOpportunities'}}"><a href="/volunteer-opportunities"
+                                                                              id="volunteerOpportunitiesBtn">Volunteer Opportunities</a></li>
+                    <li class="{{isActiveRoute 'dashboard'}}"><a href="/user/dashboard">Dashboard</a></li>
+                    <li class="{{isActiveRoute 'contact'}}"><a href="/contact">Contact us</a></li>
+                    <li class="{{isActiveRoute 'help'}}"><a href="/help">Help</a></li>
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="{{isActiveRoute 'redeemCredits'}}"><a href="/user/redeem-credits"
+                                                                     id="redeemBtn">Redeem Credits</a></li>
+                    <li class="{{isActiveRoute 'requestCredits'}}"><a href="/user/request-credits"
+                                                                              id="requestBtn">Request Validation</a></li>
+                    <li class="{{isActiveRoute 'accountSettings'}}"><a href="/user/account-settings">Account Settings</a></li>
+                    <li class="navbar-spacer">_</li>
+                    <li>{{> atNavButton}}</li>
+                    <li class="navbar-spacer">_</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="/tour.js">
+
+    </script>
+</template>

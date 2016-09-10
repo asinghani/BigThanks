@@ -21,7 +21,6 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "dashboard",
-                nav: "userNav",
                 attr: {
                     title: "Big Thanks"
                 }
@@ -34,7 +33,9 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "accountSettings",
-                nav: "userNav"
+                attr: {
+                    title: "Account Settings"
+                }
             });
         },
         name: "accountSettings"
@@ -45,7 +46,10 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "requestCredits",
-                nav: "userNav"
+                attr: {
+                    title: "Request Credit Validation",
+                    subtitle: "After volunteering, the organizer of the volunteer opportunity will validate your credits."
+                }
             });
         },
         name: "requestCredits"
@@ -58,7 +62,10 @@ export default () => {
         action() {
             BlazeLayout.render("layout", {
                 content: "redeemCredits",
-                nav: "userNav"
+                attr: {
+                    title: "Redeem Credits",
+                    subtitle: "Purchase e-vouchers, coupons, etc. using credits"
+                }
             });
         },
         name: "redeemCredits"
