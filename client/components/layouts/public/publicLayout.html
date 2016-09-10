@@ -1,6 +1,6 @@
-<template name="layout">
-    {{> Template.dynamic template=nav}}
-    <div style="background-image: url(/texture.jpg); min-height:200px; padding-top:70px;">
+<template name="publicLayout">
+    {{> publicNav}}
+    <div style="background-image: url(/images/header.jpg); min-height:200px; padding-top:70px;">
         <div class="container">
             <h1 class="top-heading">
                 {{attr.title}}
@@ -14,5 +14,6 @@
     <div class="container" style="padding-top: 25px;">
         {{> Template.dynamic template=content}}
     </div>
+
     {{> Template.dynamic template=extra}}
 </template>

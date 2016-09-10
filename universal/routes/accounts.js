@@ -16,11 +16,29 @@ export default () => {
     });
 
     // All routes accessed not logged in
-    AccountsTemplates.configureRoute("forgotPwd");
+    AccountsTemplates.configureRoute("forgotPwd", {
+        layoutRegions: {
+            attr: {
+                title: "Reset Password"
+            }
+        }
+    });
     AccountsTemplates.configureRoute("resetPwd");
-    AccountsTemplates.configureRoute("signIn");
-    AccountsTemplates.configureRoute("signUp");
-    AccountsTemplates.configureRoute("verifyEmail");
+    AccountsTemplates.configureRoute("signIn", {
+        layoutRegions: {
+            attr: {
+                title: "Sign In"
+            }
+        }
+    });
+    AccountsTemplates.configureRoute("signUp", {
+        layoutRegions: {
+            attr: {
+                title: "Create an Account",
+                subtitle: "Get started today!"
+            }
+        }
+    });
 
     // Change password route
     AccountsTemplates.configureRoute("changePwd", {
@@ -44,9 +62,7 @@ export default () => {
 
     FlowRouter.route("/logged-out", {
         action() {
-            BlazeLayout.render("layout", {
-                content: "home",
-                nav: "publicNav",
+            BlazeLayout.render("home", {
                 extra: "loggedOutModal"
             });
         },

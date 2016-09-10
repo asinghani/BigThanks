@@ -1,127 +1,105 @@
 <template name="home">
-    <script src="/test7.js"></script>
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Big Thanks</a>
-            </div>
+    <div class="home-page">
+        {{> publicNav}}
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Features</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                </ul>
+        <header id="top-header" style="min-height:1000px;">
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1 id="homeHeading">Big Thanks</h1>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur dolorum incidunt laborum maiores tenetur unde. Cupiditate delectus deleniti, dicta ducimus earum est impedit possimus provident, quas quidem soluta vel? Ut?</p>
+                    <a href="#features" class="btn btn-primary btn-rounded btn-xlarge page-scroll">Learn More</a>
+                </div>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+        </header>
 
-    <header id="top-header">
-        <div class="header-content">
-            <div class="header-content-inner">
-                <h1 id="homeHeading">Big Thanks</h1>
-                <hr>
-                <p>Luggage luggage luggage</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
-            </div>
-        </div>
-    </header>
-
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Stuff</h2>
-                    <hr class="light">
-                    <p class="text-faded">very luggage</p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Features</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Bananas</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Shiny</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Cows</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Luggages</h3>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+        <section id="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Features</h2>
+                        <hr class="primary">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <aside class="bg-dark">
-        <div class="container text-center">
-            <div class="call-to-action">
-                <h2>Get Started Now!</h2>
-                <a href="/sign-up" class="btn btn-default btn-xl sr-button">Sign Up</a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
+                            <h3>Find Volunteer Opportunities</h3>
+                            <p class="text-muted">Find unique volunteer opportunities near you.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-check text-primary sr-icons"></i>
+                            <h3>Get Validated</h3>
+                            <p class="text-muted">After volunteering, the organizer will validate your credits.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-clock-o text-primary sr-icons"></i>
+                            <h3>Earn Credits</h3>
+                            <p class="text-muted">Credits are earned based on the amount of time volunteered.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-shopping-cart text-primary sr-icons"></i>
+                            <h3>Redeem</h3>
+                            <p class="text-muted">Credits can be redeemed for e-vouchers, coupons, etc.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </aside>
+            <div class="text-center" style="padding-top:25px;">
+                <a href="/features" class="page-scroll btn btn-default btn-xl sr-button">More Details</a>
+            </div>
+        </section>
 
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Contact us</h2>
-                    <hr class="primary">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis, debitis enim illo laudantium minima rerum similique sint. Quis, rem?</p>
-                </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">luggage@luggage.luggage</a></p>
+        <aside class="bg-dark">
+            <div class="container text-center">
+                <div class="call-to-action">
+                    <h2>Get Started Now!</h2>
+                    <a href="/sign-up" class="btn btn-default-borderless btn-rounded btn-xlarge page-scroll sr-button">Sign Up</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </aside>
 
-    {{> Template.dynamic template=extra}}
+        <section class="bg-primary-faded" id="business">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Business Opportunities</h2>
+                        <hr class="light">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-offset-2 col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-users sr-icons-2"></i>
+                            <h3>Volunteer Opportunities</h3>
+                            <p class="text-faded">Non-profits and other organizations can find more volunteers</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-shopping-cart sr-icons-2"></i>
+                            <h3>Sponsor Items</h3>
+                            <p class="text-faded">Companies can sponsor items which can be purchased by users using credits.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="padding-top:25px;">
+                <a href="/business" class="page-scroll btn btn-default btn-xl sr-button">More Details</a>
+            </div>
+        </section>
+
+        {{> Template.dynamic template=extra}}
+    </div>
 </template>

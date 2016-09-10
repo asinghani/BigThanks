@@ -1,9 +1,6 @@
 export default () => {
     AccountsTemplates.configure({
-        defaultLayout: "layout",
-        defaultLayoutRegions: {
-            nav: "publicNav"
-        },
+        defaultLayout: "publicLayout",
         defaultContentRegion: "content",
         confirmPassword: true,
         enablePasswordChange: true,
@@ -27,11 +24,8 @@ export default () => {
         positiveFeedback: true,
         showValidating: true,
 
-        privacyUrl: "privacy",
-        termsUrl: "terms-of-use",
-
         homeRoutePath: "/user/dashboard",
-        redirectTimeout: 4000,
+        redirectTimeout: 500,
 
         onLogoutHook: () => { FlowRouter.go("/logged-out"); },
         onSubmitHook: (err, state) => {
@@ -59,7 +53,13 @@ export default () => {
                 signUp: "Register Now!"
             },
             title: {
-                forgotPwd: "Forgot Your Password?"
+                forgotPwd: "",
+                signIn: "",
+                signUp: "",
+                verifyEmail: "",
+                resetPwd: "",
+                changePwd: ""
+
             },
             errors: {
                 captchaVerification: "Captcha verification failed!",
@@ -76,8 +76,8 @@ export default () => {
     });
 
     AccountsTemplates.addField({
-        _id: 'name',
-        type: 'text',
+        _id: "name",
+        type: "text",
         displayName: "Name",
         required: true
     });

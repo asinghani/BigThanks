@@ -8,26 +8,37 @@ export default () => {
         },
         name: "home"
     });
-    
-    publicRoutes.route("/help", {
+
+    publicRoutes.route("/features", {
         action() {
-            BlazeLayout.render(getLayout(), {
-                content: "help",
-                nav: getNav(),
+            BlazeLayout.render("publicLayout", {
+                content: "features",
                 attr: {
-                    title: "Help",
-                    subtitle: "---"
+                    title: "Features",
+                    subtitle: ""
                 }
             });
         },
-        name: "help"
+        name: "features"
+    });
+
+    publicRoutes.route("/business", {
+        action() {
+            BlazeLayout.render("publicLayout", {
+                content: "business",
+                attr: {
+                    title: "Business",
+                    subtitle: "Find New Volunteers or Sponsor Purchasable Items"
+                }
+            });
+        },
+        name: "business"
     });
 
     publicRoutes.route("/contact", {
         action() {
-            BlazeLayout.render(getLayout(), {
+            BlazeLayout.render("publicLayout", {
                 content: "contact",
-                nav: getNav(),
                 attr: {
                     title: "Contact Us"
                 }
@@ -52,9 +63,8 @@ export default () => {
 
     FlowRouter.notFound = {
         action() {
-            BlazeLayout.render(getLayout(), {
-                content: "404",
-                nav: getNav()
+            BlazeLayout.render("publicLayout", {
+                content: "404"
             });
         }
     };

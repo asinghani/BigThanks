@@ -1,0 +1,42 @@
+<template name="publicNav">
+    <div class="home-page">
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" href="/">Big Thanks</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="{{isActiveRoute 'home'}}">
+                            <a class="page-scroll" href="/">Home</a>
+                        </li>
+                        <li class="{{isActiveRoute 'features'}}">
+                            <a href="/features">Features</a>
+                        </li>
+                        <li class="{{isActiveRoute 'business'}}">
+                            <a href="/business">Business</a>
+                        </li>
+                        <li class="{{isActiveRoute 'contact'}}">
+                            <a href="/contact">Contact</a>
+                        </li>
+                        <li class="navbar-spacer">___</li>
+                        <li class="{{isActiveRoute 'atSignIn'}}">
+                            {{#if $not currentUser}}
+                                <a href="/sign-in" style="display:inline;">Sign In</a>
+                                <button id="signUp" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Up</button>
+                                {{else}}
+                                <a href="/user/dashboard" style="display:inline;">Dashboard</a>
+                                <button id="logout" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Out</button>
+                            {{/if}}
+                        </li>
+                        <li class="navbar-spacer">_</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</template>
