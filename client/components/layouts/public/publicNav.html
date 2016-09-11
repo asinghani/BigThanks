@@ -17,8 +17,11 @@
                         <li class="{{isActiveRoute 'features'}}">
                             <a href="/features">Features</a>
                         </li>
-                        <li class="{{isActiveRoute 'business'}}">
-                            <a href="/business">Business</a>
+                        <li class="{{isActiveRoute 'organizations'}}">
+                            <a href="/organizations">Organizations</a>
+                        </li>
+                        <li class="{{isActiveRoute 'sponsor'}}">
+                            <a href="/sponsor">Sponsor</a>
                         </li>
                         <li class="{{isActiveRoute 'contact'}}">
                             <a href="/contact">Contact</a>
@@ -26,7 +29,7 @@
                         <li class="navbar-spacer">___</li>
                         <li class="{{isActiveRoute 'atSignIn'}}">
                             {{#if $not currentUser}}
-                                <a href="/sign-in" style="display:inline;">Sign In</a>
+                                <a href="/user/dashboard" style="display:inline;">Sign In</a>
                                 <button id="signUp" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Up</button>
                                 {{else}}
                                 <a href="/user/dashboard" style="display:inline;">Dashboard</a>

@@ -6,11 +6,11 @@ Meteor.methods({
      *
      * Required Permission: Organization Admin
      */
-    "organization.update"(name, website) {
+    "organization.update"(name, website, logo) {
         if (!Meteor.userId() || !Roles.userIsInRole(Meteor.userId(), "organization_admin")) {
             throw new Meteor.Error("not-authorized");
         }
-        Organizations.update({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}, {$set: {name: name, website: website}});
+        Organizations.update({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}, {$set: {name: name, website: website, logo: logo}});
     },
 
     /**

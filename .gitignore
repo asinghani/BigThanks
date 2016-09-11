@@ -9,6 +9,8 @@ node_modules
 # meteor settings file
 settings.json
 
+dev
+
 # meteor build output files
 *.tar.gz
 

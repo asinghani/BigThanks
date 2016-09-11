@@ -147,5 +147,16 @@ Meteor.methods({
             html: emailMsg
         });
 
+    },
+
+    /**
+     * Initial Tour Ended, reset firstLogin flag
+     *
+     */
+    "user.tour.ended"(){
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+        Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstLogin": false}});
     }
 });

@@ -22,17 +22,30 @@ export default () => {
         name: "features"
     });
 
-    publicRoutes.route("/business", {
+    publicRoutes.route("/sponsor", {
         action() {
             BlazeLayout.render("publicLayout", {
-                content: "business",
+                content: "sponsor",
                 attr: {
-                    title: "Business",
-                    subtitle: "Find New Volunteers or Sponsor Purchasable Items"
+                    title: "Sponsor",
+                    subtitle: ""
                 }
             });
         },
-        name: "business"
+        name: "sponsor"
+    });
+
+    publicRoutes.route("/organizations", {
+        action() {
+            BlazeLayout.render("publicLayout", {
+                content: "organizations",
+                attr: {
+                    title: "Organizations",
+                    subtitle: "luggage"
+                }
+            });
+        },
+        name: "organizations"
     });
 
     publicRoutes.route("/contact", {

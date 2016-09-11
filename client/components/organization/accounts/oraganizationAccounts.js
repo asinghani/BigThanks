@@ -39,7 +39,7 @@ Template.organizationAccounts.helpers({
             key: "_id",
             fn: (id, obj) => {
                 let disable = (Roles.userIsInRole(obj._id, "organization_super_admin") || Meteor.userId() === obj._id) ? "disabled" : "";
-                return new Spacebars.SafeString(`<a href="#" class="btn btn-primary btn-xs btn-reset" data-id="${id}">Reset Password</a>
+                return new Spacebars.SafeString(`<a href="#" class="btn btn-primary btn-outline btn-xs btn-reset" data-id="${id}">Reset Password</a>
                         <a href="#" class="btn btn-danger btn-xs btn-delete" data-id="${id}" ${disable}>Delete Account</a>`);
             }
         }];

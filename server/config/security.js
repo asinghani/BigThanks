@@ -18,7 +18,9 @@ export default (BrowserPolicy) => {
     BrowserPolicy.content.allowConnectOrigin("https://bigthanks.dev");
     BrowserPolicy.content.allowConnectOrigin("ws://bigthanks.dev");
     BrowserPolicy.content.allowConnectOrigin("wss://bigthanks.dev");
-    BrowserPolicy.content.allowConnectOrigin("https://enginex.kadira.io/simplentp/sync");
+    BrowserPolicy.content.allowConnectOrigin("https://enginex.kadira.io");
+
+    BrowserPolicy.content.allowImageOrigin("*"); // Allow organization logos
 };
 
 Meteor.startup(() => {

@@ -101,24 +101,21 @@ $(function (){
                 path: "/user/redeem-credits",
                 placement: "auto top",
                 onHide: function (){
-                    Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstLogin": false}});
+                    Meteor.call("user.tour.ended");
                 }
             },
 
             {
                 title: "Get started",
                 content: "Thank you for signing up! You may now begin participating in volunteer jobs and earning credits.",
-                path: "/user/dashboard",
+                path: "/user/redeem-credits",
                 backdrop: true,
                 orphan: true
             }
 
         ], onEnd: function (){
-            Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstLogin": false}});
-            BlazeLayout.render("layout", {
-                content: "dashboard",
-                nav: "userNav"
-            });
+            Meteor.call("user.tour.ended");
+            window.location.reload();
         }
     });
 

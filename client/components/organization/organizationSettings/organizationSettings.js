@@ -9,8 +9,8 @@ Template.organizationSettings.events({
 
         let form = event.target;
 
-        if(form.name.value !== "" && form.website.value !== ""){
-            Meteor.call("organization.update", form.name.value, form.website.value);
+        if(form.name.value !== "" && form.website.value !== "" && form.logo.value !== ""){
+            Meteor.call("organization.update", form.name.value, form.website.value, form.logo.value);
         }
 
         swal({
@@ -18,12 +18,23 @@ Template.organizationSettings.events({
             text: "Successfully changed organization settings.",
             type: "success"
         });
+    },
+    "keyup #logo"(event){
+        let url = $("#logo").val();
+        $("#logoImg").attr("src", url);
+    },
+    "change #logo"(event){
+        let url = $("#logo").val();
+        $("#logoImg").attr("src", url);
     }
 });
 
 Template.organizationSettings.onRendered(() => {
     Meteor.setTimeout(() => {
-        $("#name").val(Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].name);
-        $("#website").val(Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].website);
+        let organization = Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0];
+        $("#name").val(organization.name);
+        $("#website").val(organization.website);
+        $("#logo").val(organization.logo);
+        $("#logoImg").attr("src", organization.logo).css("display", "initial");
     }, 100);
 });

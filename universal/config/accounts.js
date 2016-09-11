@@ -25,7 +25,7 @@ export default () => {
         showValidating: true,
 
         homeRoutePath: "/user/dashboard",
-        redirectTimeout: 500,
+        redirectTimeout: 4000,
 
         onLogoutHook: () => { FlowRouter.go("/logged-out"); },
         onSubmitHook: (err, state) => {
@@ -39,6 +39,12 @@ export default () => {
                         FlowRouter.go("/user/dashboard");
                     });
                     return false;
+                } else if (state === "resetPwd"){
+                    FlowRouter.go("/user/dashboard");
+                } else if (state === "signIn"){
+                    FlowRouter.go("/user/dashboard");
+                } else if (state === "signUp"){
+                    FlowRouter.go("/user/dashboard");
                 }
             }
         },

@@ -63,9 +63,7 @@ export default () => {
 
     FlowRouter.route("/logged-out", {
         action() {
-            BlazeLayout.render("home", {
-                extra: "loggedOutModal"
-            });
+            BlazeLayout.render("home");
         },
         name: "home2"
     });

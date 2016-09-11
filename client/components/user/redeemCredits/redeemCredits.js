@@ -54,26 +54,3 @@ Template.redeemCredits.events({
 
     }
 });
-
-Template.onRendered(() => {
-
-    /*if(this._prearendered) return;
-    this._prearendered = true;
-    Meteor.setTimeout(() => {
-
-    }, 1000);
-    console.log(this._prearendered)
-    let rows = $(".purchase-item-row");
-    _.each(rows, (row) => {
-        let cols = $(row).children();
-        let maxHeight = 200;
-        _.each(cols, (col) => {
-            if($(col).height() > maxHeight) maxHeight = $(col).height();
-        });
-        console.log(maxHeight);
-        _.each(cols, (col) => {
-            $(col).height(maxHeight+20);
-            $(col).children().height(maxHeight);
-        });
-    });*/
-});
