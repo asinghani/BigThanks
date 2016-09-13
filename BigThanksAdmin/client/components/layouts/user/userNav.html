@@ -1,0 +1,41 @@
+<template name="userNav">
+    <div class="transparent-nav">
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" style="font-weight: bold; text-transform: uppercase;" href="/">Big Thanks</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="{{isActiveRoute 'home'}}"><a href="/">Home</a></li>
+                        <li class="{{isActiveRoute 'volunteerOpportunities'}}"><a href="/volunteer-opportunities"
+                                                                                  id="volunteerOpportunitiesBtn">Volunteer Opportunities</a></li>
+                        <li class="{{isActiveRoute 'dashboard'}}"><a href="/user/dashboard">Dashboard</a></li>
+                        <li class="{{isActiveRoute 'contact'}}"><a href="/contact">Contact</a></li>
+
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="{{isActiveRoute 'redeemCredits'}}"><a href="/user/redeem-credits"
+                                                                         id="redeemBtn">Redeem</a></li>
+                        <li class="{{isActiveRoute 'requestCredits'}}"><a href="/user/request-credits"
+                                                                          id="requestBtn">Validation</a></li>
+                        <li class="{{isActiveRoute 'accountSettings'}}"><a href="/user/account-settings">Settings</a></li>
+                        <li class="navbar-spacer">_</li>
+                        <li>
+                            <button id="logout" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Out</button>
+                        </li>
+                        <li class="navbar-spacer">_</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <script src="/tour.js"></script>
+</template>

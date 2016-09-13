@@ -1,0 +1,63 @@
+<template name="requestCredits">
+    <form class="form-horizontal col-sm-7" id="request-form" style="display:block;">
+
+        <div class="form-group" id="organization">
+            <label class="col-sm-6 control-label">
+                Where did you volunteer?
+            </label>
+            <div class="col-sm-6">
+                <select class="form-control" id="organizationSelect">
+                    {{#each organizations}}
+                        {{> organizationOption}}
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        
+        <div class="form-group" id="opportunity">
+            <label class="col-sm-6 control-label">
+                What was the volunteer opportunity named?
+            </label>
+            <div class="col-sm-6">
+                <select class="form-control" id="opportunitySelect">
+                    {{#each opportunities}}
+                        {{> opportunityOption}}
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-6 control-label">
+                How long did you volunteer?
+            </label>
+            <div class="col-sm-6">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="fa fa-clock-o"></i>
+                    </span>
+                    <span id="durationContainer">
+                        <input type="text" class="form-control duration-picker" id="volunteerDuration">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="form-group col-sm-offset-3 col-sm-9" id="submit-group" style="display:block; padding-top: 15px; padding-bottom: 20px">
+        <div class="col-sm-12">
+            <a href="#" id="submit" class="btn btn-primary btn-outline">
+                Submit
+            </a>
+            <span style="visibility:hidden">__</span>
+            Most organizations approve credits within 2-4 days of submitting
+        </div>
+    </div>
+</template>
+
+<template name="organizationOption">
+    <option value="{{id}}" disabled="{{disabled}}">{{name}} {{noOpportunities}}</option>
+</template>
+
+<template name="opportunityOption">
+    <option value="{{id}}">{{name}} ({{date}})</option>
+</template>

@@ -1,0 +1,74 @@
+<template name="redeemCredits">
+    <p class="lead">Current credits available: {{currentUser.profile.credits}}</p>
+    <br>
+    <br>
+
+    <br>
+
+    <div id="items" style="padding-top:20px;">
+        {{#if dataReady}}
+            {{#each group in items}}
+                <div class="row purchase-item-row">
+                    {{#each group.items}}
+                        {{> purchasableItem}}
+                    {{/each}}
+                </div>
+            {{else}}
+                No items are currently available for purchase. Try again later
+            {{/each}}
+        {{else}}
+            {{> spinner}}
+        {{/if}}
+    </div>
+
+</template>
+
+<template name="purchasableItem">
+    <div class="col-md-4 col-sm-6 col-xs-8 col-xs-offset-2 col-sm-offset-0 col">
+        <div class="panel panel-default" style="height: 450px; min-height: 450px; max-height: 450px;">
+            <div class="panel-body">
+
+                <!-- Image -->
+                <div class="row">
+                    <div class="col-md-10 col-xs-10 col-xs-offset-1">
+                        <img src="{{image}}" style="height:200px; width:100%; object-fit:contain;">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-7 col-xs-7">
+                        <h4>{{name}}</h4>
+                    </div>
+
+                    <div class="col-md-5 col-xs-5">
+                        <h4>
+                            <label>{{cost}} Credits</label>
+                        </h4>
+                    </div>
+                </div>
+
+                <p id="desc">{{desc}}</p>
+                <br>
+                <p>Sponsored by: {{sponsor}}</p>
+
+                {{#if $gt stock 15}}
+                    <p class="bold text-success">{{stock}} in stock</p>
+                {{else}} {{#if $gt stock 0}}
+                    <p class="bold text-warning">Only {{stock}} left in stock</p>
+                {{else}}
+                    <p class="bold text-danger">Out of stock</p>
+                {{/if}}{{/if}}
+
+
+                <div class="row">
+                    <div class="col-md-6 col-xs-6">
+                        <a href="{{website}}" target="_blank" class="btn btn-primary btn-outline" style="width:100%"> <span class="fa fa-info-circle"></span> More info</a>
+                    </div>
+                    <div class="col-md-6 col-xs-6">
+                        <a href="#" class="btn btn-success btn-purchase btn-outline" data-item="{{name}}" data-id="{{_id}}" data-credits={{cost}} style="width:100%" {{disabled}}> <span class="fa fa-shopping-cart"></span> Purchase</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,19 @@
+<template name="fullWidthLayout">
+    <div class="alert alert-danger alert-dismissible display-very-small" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Screen Size</strong> Big Thanks Organization Dashboard is not optimized for very small devices.
+    </div>
+    <div id="wrapper">
+        {{> Template.dynamic template=nav}}
+        <div id="page-wrapper">
+            <div>
+                <h1>
+                    {{attr.title}}
+                </h1>
+                <hr>
+            </div>
+            {{> Template.dynamic template=content}}
+        </div>
+    </div>
+    {{> Template.dynamic template=extra}}
+</template>

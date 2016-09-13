@@ -1,0 +1,113 @@
+<template name="home">
+    <div class="home-page">
+        {{> publicNav}}
+
+        <header id="top-header" style="min-height:1000px;">
+            <div class="header-content">
+                <div class="header-content-inner">
+                    <h1 id="homeHeading">Big Thanks</h1>
+                    <hr>
+                    <p>
+                        Big Thanks allows citizens to find volunteer opportunities and sign up. After volunteering, credits
+                        are rewarded based on amount of time volunteered and can be redeemed for coupons, e-vouchers, etc....
+                    </p>
+                    <a href="#features" class="btn btn-primary btn-rounded btn-xlarge page-scroll">Learn More</a>
+                </div>
+            </div>
+        </header>
+
+        <section id="features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Features</h2>
+                        <hr class="primary">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-map-marker text-primary sr-icons"></i>
+                            <h3>Find Volunteer Opportunities</h3>
+                            <p class="text-muted">Find unique volunteer opportunities near you.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-gift text-primary sr-icons"></i>
+                            <h3>Earn Credits</h3>
+                            <p class="text-muted">Credits are earned based on the amount of time volunteered.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-check text-primary sr-icons"></i>
+                            <h3>Get Validated</h3>
+                            <p class="text-muted">After volunteering, the organizer will validate your credits.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="service-box">
+                            <i class="fa fa-4x fa-shopping-cart text-primary sr-icons"></i>
+                            <h3>Redeem</h3>
+                            <p class="text-muted">Credits can be redeemed for e-vouchers, coupons, etc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="padding-top:25px;">
+                <a href="/features" class="page-scroll btn btn-default btn-xl sr-button">More Details</a>
+            </div>
+        </section>
+
+        <aside class="bg-dark">
+            <div class="container text-center">
+                <div class="call-to-action">
+                    {{#if currentUser}}
+                        <h2>Start volunteering now!</h2>
+                        <a href="/user/dashboard" class="btn btn-default-borderless btn-rounded btn-xlarge page-scroll sr-button">Go to your dashboard</a>
+                    {{else}}
+                        <h2>Sign up as a volunteer now!</h2>
+                        <a href="/sign-up" class="btn btn-default-borderless btn-rounded btn-xlarge page-scroll sr-button">Sign Up</a>
+                    {{/if}}
+                </div>
+            </div>
+        </aside>
+        <section class="bg-primary-faded" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">Enroll as an organization!</h2>
+                        <hr class="light">
+                        <p class="text-faded">
+                            Non-profits and other organizations can find many benefits from signing up for Big Thanks.
+                            Volunteers are more engaged and are more likely to attend when they can earn credits.
+                        </p>
+                        <a href="/organizations" class="btn btn-default-borderless btn-rounded btn-xlarge page-scroll sr-button">
+                            Enroll Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <h2 class="section-heading">Participate as a sponsor!</h2>
+                        <hr class="primary">
+                        <p class="text-muted">
+                            Companies can help by offering items which can be purchased by users using credits.
+                        </p>
+                        <div class="text-center" style="padding-top:25px;">
+                            <a href="/sponsor" class="page-scroll btn btn-default btn-xl sr-button">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{> Template.dynamic template=extra}}
+    </div>
+</template>
