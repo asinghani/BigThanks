@@ -17,7 +17,7 @@ export default () => {
     FlowRouter.route("/sign-out", {
         action() {
             Accounts.logout();
-            FlowRouter.redirect("/");
+            FlowRouter.redirect("/sign-in");
         },
         name: "logout"
     });
@@ -34,25 +34,27 @@ export default () => {
         triggersEnter: [
             (ctx, redirect) => {
                 var route;
-                if (!(Meteor.loggingIn() || Meteor.userId())) {
+                /*if (!(Meteor.loggingIn() || Meteor.userId())) {
                     route = FlowRouter.current();
                     if (route.route.name !== "login") {
                         Session.set("redirectAfterLogin", route.path);
                     }
                     redirect("/sign-in");
-                }
+                }*/
             }
         ]
     });
 
-    routes.route("/dashboard", {
+    FlowRouter.route("/dashboard", {
         action() {
-            BlazeLayout.render("layout", {
-                content: "dashboard",
-                attr: {
-                    title: "Dashboard"
-                }
-            });
+            FlowRouter.redirect("/");
+        },
+        name: "dashboardAlt"
+    });
+
+    FlowRouter.route("/", {
+        action() {
+            BlazeLayout.render("dashboard");
         },
         name: "dashboard"
     });

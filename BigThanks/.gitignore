@@ -11,6 +11,8 @@ settings.json
 
 dev
 
+.deploy
+
 # meteor build output files
 *.tar.gz
 
