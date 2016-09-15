@@ -24,6 +24,18 @@ Template.organizationDashboard.events({
 Template.organizationDashboard.helpers({
     "numRequests": () => {
         return Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].requests.length;
+    }, "numRegistrations": () => {
+        var num = 0;
+        let opportunities = Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].opportunities;
+        _.forEach(opportunities, (o) => {
+            let registrations = o.registrations;
+            _.forEach(registrations, (r) => {
+                if(moment.unix(r.timestamp).add(1, "d").isAfter(moment())) {
+                    num ++;
+                }
+            });
+        });
+        return num;
     }, "users": () => {
         let data = [];
         Organizations.find({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}).fetch()[0].users.forEach((userId) => {

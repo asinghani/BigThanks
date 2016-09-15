@@ -1,32 +1,6 @@
-import createAccountsRoutes from "../universal/routes/accounts.js";
-import createUserRoutes from "../universal/routes/user.js";
-import createOrganizationRoutes from "../universal/routes/organization.js";
-import createPublicRoutes from "../universal/routes/public.js";
-import setupAccounts from "../universal/config/accounts.js";
-
-FlowRouter.wait();
-
-Tracker.autorun(() => {
-    if (Roles.subscription.ready() && !FlowRouter._initialized) {
-        return FlowRouter.initialize();
-    }
-});
-
-
-AccountsTemplates._initialized = false;
+import setupAccounts from "../universal/accounts.js";
+import createRoutes from "../universal/routes.js";
 
 setupAccounts();
 
-// Main routes
-createAccountsRoutes();
-createUserRoutes();
-createOrganizationRoutes();
-createPublicRoutes();
-
-AccountsTemplates._init();
-
-// Extra debug code
-import setupDebug from "../universal/debug.js";
-if(Meteor.isDevelopment){
-    setupDebug();
-}
+createRoutes();

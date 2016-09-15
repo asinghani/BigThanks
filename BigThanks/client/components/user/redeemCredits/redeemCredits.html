@@ -25,8 +25,8 @@
 
 <template name="purchasableItem">
     <div class="col-md-4 col-sm-6 col-xs-8 col-xs-offset-2 col-sm-offset-0 col">
-        <div class="panel panel-default" style="height: 450px; min-height: 450px; max-height: 450px;">
-            <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-body" style="height: 400px; min-height: 400px; max-height: 400px; overflow-y: scroll;">
 
                 <!-- Image -->
                 <div class="row">
@@ -46,11 +46,6 @@
                         </h4>
                     </div>
                 </div>
-
-                <p id="desc">{{desc}}</p>
-                <br>
-                <p>Sponsored by: {{sponsor}}</p>
-
                 {{#if $gt stock 15}}
                     <p class="bold text-success">{{stock}} in stock</p>
                 {{else}} {{#if $gt stock 0}}
@@ -59,15 +54,21 @@
                     <p class="bold text-danger">Out of stock</p>
                 {{/if}}{{/if}}
 
+                <p id="desc">{{desc}}</p>
+                <p>Sponsored by: {{sponsor}}</p>
 
-                <div class="row">
-                    <div class="col-md-6 col-xs-6">
-                        <a href="{{website}}" target="_blank" class="btn btn-primary btn-outline" style="width:100%"> <span class="fa fa-info-circle"></span> More info</a>
-                    </div>
-                    <div class="col-md-6 col-xs-6">
-                        <a href="#" class="btn btn-success btn-purchase btn-outline" data-item="{{name}}" data-id="{{_id}}" data-credits={{cost}} style="width:100%" {{disabled}}> <span class="fa fa-shopping-cart"></span> Purchase</a>
-                    </div>
+
+                <!--<div class="row">
+                </div>-->
+            </div>
+            <div class="panel-footer">
+                <div class="col-md-6 col-xs-6">
+                    <a href="{{website}}" target="_blank" class="btn btn-primary btn-block btn-outline" style="width:100%"> <span class="fa fa-info-circle"></span> More info</a>
                 </div>
+                <div class="col-md-6 col-xs-6">
+                    <a href="#" class="btn btn-success btn-purchase btn-block btn-outline" data-item="{{name}}" data-id="{{_id}}" data-credits={{cost}} style="width:100%" {{disabled}}> <span class="fa fa-shopping-cart"></span> Purchase</a>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>

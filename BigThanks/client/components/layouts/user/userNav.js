@@ -8,6 +8,17 @@ Template.userNav.events({
     },
     "click #logout"(event){
         FlowRouter.go("/sign-out");
+    },
+    "click #helpBtn"(event){
+        Meteor.call("user.tour.restart", () => {
+            FlowRouter.go("/user/dashboard");
+
+            let script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = "/tour.js";
+            document.body.appendChild(script);
+
+        });
     }
 });
 

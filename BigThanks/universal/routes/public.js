@@ -41,7 +41,7 @@ export default () => {
                 content: "organizations",
                 attr: {
                     title: "Organizations",
-                    subtitle: "luggage"
+                    subtitle: ""
                 }
             });
         },
@@ -75,20 +75,6 @@ export default () => {
             }
         },
         name: "contact"
-    });
-
-    publicRoutes.route("/volunteer-opportunities", {
-        action() {
-            BlazeLayout.render(getLayout(), {
-                content: "volunteerOpportunities",
-                nav: getNav(),
-                attr: {
-                    title: "Volunteer Opportunities",
-                    subtitle: "Find and sign up for nearby volunteer opportunities."
-                }
-            });
-        },
-        name: "volunteerOpportunities"
     });
 
     FlowRouter.notFound = {

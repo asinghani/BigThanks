@@ -1,6 +1,6 @@
 <template name="organizationNav">
     {{> verifyEmail}}
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <nav class="navbar navbar-default navbar-static-top navbar-simple" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -34,21 +34,8 @@
                 <ul class="nav" id="side-menu">
 
                     <!-- Public Routes -->
-                    <li>
-                        <a href="#" aria-disabled="{{isActiveRouteTrueFalse 'home|volunteerOpportunities|contact|help'}}"
-                           class="{{isActiveRouteExpanded 'home|volunteerOpportunities|contact|help'}}">
-                            <i class="fa fa-th-list fa-fw"></i> Big Thanks <span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level {{isActiveRouteIn 'home|volunteerOpportunities|contact|help'}}" aria-expanded="{{isActiveRouteTrueFalse 'home|volunteerOpportunities|contact|help'}}">
-                            <li class="{{isActiveRoute 'home'}}">
-                                <a href="/"><i class="fa fa-home fa-fw"></i> Home</a>
-                            </li>
-                            <li class="{{isActiveRoute 'volunteerOpportunities'}}">
-                                <a href="/volunteer-opportunities"><i class="fa fa-map-marker fa-fw"></i> Volunteer Opportunities</a>
-                            </li>
-                            <li class="{{isActiveRoute 'contact'}}">
-                                <a href="/contact"><i class="fa fa-envelope fa-fw"></i> Contact us</a>
-                            </li>
-                        </ul>
+                    <li class="{{isActiveRoute 'home'}}">
+                        <a href="/"><i class="fa fa-home fa-fw"></i> Home</a>
                     </li>
 
                     <!-- Dashboard Link -->
@@ -107,7 +94,10 @@
                                data-placement="right"><i class="fa fa-sliders fa-fw"></i> Organization Settings</a>
                         </li>
                     {{/if}}
-                    </ul>
+                    <li class="{{isActiveRoute 'contact'}}">
+                        <a href="/contact"><i class="fa fa-envelope fa-fw"></i> Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

@@ -60,12 +60,6 @@ Template.organizationOpportunities.helpers({
                 return new Spacebars.SafeString(`<a target="_blank" href="https://www.google.com/maps?z=10&t=h&q=loc:${_.escape(obj.lat)}+${_.escape(obj.long)}"> ${_.escape(location)} </a>`);
             }
         }, {
-            label: "Contact",
-            key: "contact",
-            fn: (contact) => {
-                return new Spacebars.SafeString(`<a href="mailto:${_.escape(contact)}">${_.escape(contact).replace("@", "@<wbr>")}</a>`);
-            }
-        }, {
             label: "Public",
             key: "public",
             fn: (pub) => {
@@ -75,7 +69,8 @@ Template.organizationOpportunities.helpers({
             label: "",
             key: "_id",
             fn: (id) => {
-                return new Spacebars.SafeString(`<a href="#" type="button" class="btn btn-primary btn-xs edit-btn" data-id="${id}">Edit</a>`);
+                return new Spacebars.SafeString(`<a href="#" type="button" class="btn btn-primary btn-xs edit-btn" data-id="${id}">Edit</a>
+                    <a href="#" type="button" class="btn btn-primary btn-xs view-btn" data-id="${id}">View Signups</a>`);
             }
         }];
 
@@ -148,9 +143,6 @@ Template.organizationOpportunities.events({
         $("#name").val(opportunity.name);
         $("#desc").val(opportunity.description);
 
-        // Email + Validation icons
-        $("#email").val(opportunity.contact);
-
         // Duration picker
         $("#durationMinContainer").html("<input type=\"text\" class=\"form-control duration-picker\" id=\"durationMin\">");
         $("#durationMaxContainer").html("<input type=\"text\" class=\"form-control duration-picker\" id=\"durationMax\">");
@@ -186,6 +178,51 @@ Template.organizationOpportunities.events({
         $("#editModal").on("shown.bs.modal", () => {
             $("map").locationpicker("autosize");
         }).modal();
+
+
+    }, "click .view-btn"(event){
+        event.preventDefault();
+        let id = $(event.target).attr("data-id");
+        var opportunity;
+        if (Opportunities) {
+            Opportunities.forEach((o) => {
+                if(o._id === id){
+                    opportunity = o;
+                }
+            });
+        }
+        
+
+        if(!opportunity){
+            swal("Internal Error",
+                "An internal error occurred. Please try reloading the page", "error");
+            return;
+        }
+
+        var list = `
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+        `;
+
+        $("#signupsOpportunity").html(opportunity.name);
+
+        _.forEach(opportunity.registrations, (registration) => {
+            list += `<tr> <td> ${registration.name} </td> <td> ${registration.email} </td> </tr>`;
+        });
+
+        list += "</tbody></table>";
+
+        if(!opportunity.registrations || opportunity.registrations.length === 0) list = "No registrations for this opportunity!";
+
+        $("#signups").html(list);
+
+        $("#signupsModal").modal();
 
 
     }, "click .close-btn"(event){
@@ -245,9 +282,6 @@ Template.organizationOpportunities.events({
         $("#name").val("");
         $("#desc").val("");
 
-        // Email + Validation icons
-        $("#email").val("");
-
         // Duration picker
         $("#durationMinContainer").html("<input type=\"text\" class=\"form-control duration-picker\" id=\"durationMin\">");
         $("#durationMaxContainer").html("<input type=\"text\" class=\"form-control duration-picker\" id=\"durationMax\">");
@@ -298,7 +332,6 @@ Template.organizationOpportunities.events({
                 $("#endDate").val() &&
                 $("#name").val() &&
                 $("#desc").val() &&
-                $("#email").val() &&
                 $("#durationMin").val() &&
                 $("#durationMax").val() &&
                 $("#location").val() &&
@@ -334,8 +367,6 @@ Template.organizationOpportunities.events({
             opportunity.name = $("#name").val();
             opportunity.description = $("#desc").val();
 
-            opportunity.contact = $("#email").val();
-
             let lengthA = parseInt($("#durationMin").val())/60;
             let lengthB = parseInt($("#durationMax").val())/60;
 
@@ -358,14 +389,6 @@ Template.organizationOpportunities.events({
 
             $("#editModal").modal("hide");
         });
-    }, "keyup #email"(event){
-        if(validEmail.exec($("#email").val())){
-            $("#emailGroup").removeClass("has-error").addClass("has-success");
-            $("#feedbackIcon").removeClass("fa-times").addClass("fa-check");
-        } else {
-            $("#emailGroup").removeClass("has-success").addClass("has-error");
-            $("#feedbackIcon").removeClass("fa-check").addClass("fa-times");
-        }
     }
 });
 

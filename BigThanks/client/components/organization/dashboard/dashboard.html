@@ -32,13 +32,37 @@
                 </div>
             </div>
         {{/if}}
+        {{#if isInRole 'organization_admin,organization_opportunities'}}
+            <div class="col-lg-4 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-users fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{numRegistrations}}</div>
+                                <div>New volunteer opportunity sign-ups</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/organization/opportunities">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {{/if}}
     </div>
     <div class="row">
         {{#if isInRole 'organization_admin'}}
             <div class="col-lg-4 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="fa fa-users fa-fw"></i> Users in your organization
+                <div class="panel panel-primary">
+                    <div class="panel-heading bold">
+                        <i class="fa fa-users fa-fw fa-lg"></i> Users in your organization
                     </div>
                     <div class="panel-body">
                         <div class="list-group">
@@ -59,9 +83,9 @@
 
         {{#if isInRole 'organization_admin,organization_opportunities'}}
             <div class="col-lg-4 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="fa fa-map-marker fa-fw"></i> Volunteer opportunities
+                <div class="panel panel-primary">
+                    <div class="panel-heading bold">
+                        <i class="fa fa-map-marker fa-fw fa-lg"></i> Volunteer opportunities
                     </div>
                     <div class="panel-body">
                         <div class="list-group">
@@ -82,9 +106,9 @@
 
         {{#if isInRole 'organization_admin,organization_validate'}}
             <div class="col-lg-4 col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="fa fa-check fa-fw"></i> Validation requests
+                <div class="panel panel-primary">
+                    <div class="panel-heading bold">
+                        <i class="fa fa-check fa-fw fa-lg"></i> Validation requests
                     </div>
                     <div class="panel-body">
                         <div class="list-group">

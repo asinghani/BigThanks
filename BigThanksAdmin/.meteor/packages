@@ -32,9 +32,7 @@ autopublish
 
 # Community Packages
 
-aldeed:collection2
 kadira:blaze-layout
-natestrauser:animate-css
 dburles:collection-helpers
 meteorhacks:fast-render
 johnantoni:meteor-normalize
@@ -45,16 +43,11 @@ fortawesome:fontawesome
 alanning:roles
 sacha:spin
 zimme:active-route
-useraccounts:core
-accounts-ui@1.1.9
 email@1.1.16
 seba:minifiers-autoprefixer
-coffeescript@1.2.3
 dschulz:jquery-qrcode
-useraccounts:bootstrap
 aslagle:reactive-table
 momentjs:moment
-useraccounts:flow-routing
 less
 kadira:flow-router
 onokumus:metismenu

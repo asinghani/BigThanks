@@ -70,4 +70,17 @@ export default () => {
         },
         name: "redeemCredits"
     });
+
+    userRoutes.route("/volunteer-opportunities", {
+        action() {
+            BlazeLayout.render("layout", {
+                content: "volunteerOpportunities",
+                attr: {
+                    title: "Volunteer Opportunities",
+                    subtitle: "Find and sign up for nearby volunteer opportunities."
+                }
+            });
+        },
+        name: "volunteerOpportunities"
+    });
 };

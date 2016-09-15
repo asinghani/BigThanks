@@ -22,7 +22,7 @@ if(Meteor.isServer) {
                 $set: {"opportunities.$.deleted": true }
             });
         },"opportunity.update"(id, opportunity){
-            if (!id) {
+            if (!id || !opportunity) {
                 throw new Meteor.Error("invalid-args");
             }
 
@@ -34,7 +34,7 @@ if(Meteor.isServer) {
                 $set: {"opportunities.$": opportunity }
             });
         },"opportunity.insert"(opportunity){
-            if (!id) {
+            if (!opportunity) {
                 throw new Meteor.Error("invalid-args");
             }
 
@@ -45,6 +45,30 @@ if(Meteor.isServer) {
             opportunity._id = new Mongo.ObjectID()._str;
             Organizations.update({_id: new Mongo.ObjectID(Meteor.user().profile.organization)}, {
                 $push: {"opportunities": opportunity }
+            });
+        },"opportunity.register"(organization, opportunity){
+            if (!organization || !opportunity) {
+                throw new Meteor.Error("invalid-args");
+            }
+
+            if (!Meteor.userId()) {
+                throw new Meteor.Error("not-authorized");
+            }
+
+            let email = Meteor.user().emails[0].address;
+
+            if(Organizations.find({_id: new Mongo.ObjectID(organization), "opportunities._id": opportunity,
+                    "opportunities.registrations.email": email}).fetch().length > 0){
+                return;
+            }
+
+            Organizations.update({_id: new Mongo.ObjectID(organization), "opportunities._id": opportunity}, {
+                $push: {"opportunities.$.registrations": {
+                    _id: new Mongo.ObjectID()._str,
+                    name: Meteor.user().profile.name,
+                    email: email,
+                    timestamp: moment().unix()
+                }}
             });
         }
     });

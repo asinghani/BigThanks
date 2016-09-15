@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "meteor --port=3000 --settings settings.json",
+    "dev": "meteor --port=5000 --settings settings.json",
     "https": "(sudo nginx -s stop; sudo nginx -c nginx.conf ) & meteor npm run dev ",
     "start": "sudo meteor npm run dev",
-    "dev:debug": "sudo meteor --port=3000 --settings settings.json"
+    "dev:debug": "sudo meteor --port=5000 --settings settings.json"
   },
   "author": "Anish",
   "dependencies": {
     "aws-sdk": "^2.5.5",
     "barcode": "^0.1.0",
+    "bcrypt": "^0.8.7",
     "express": "^4.14.0",
     "io-barcode": "^1.3.0",
     "jQuery": "^1.7.4"

@@ -158,5 +158,15 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
         Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.firstLogin": false}});
+    },
+
+    /**
+     * Restart the tour for user
+     */
+    "user.tour.restart"(){
+        if (!Meteor.userId()) {
+            throw new Meteor.Error("not-authorized");
+        }
+        Meteor.users.update({ _id: Meteor.userId()}, {$set: { "profile.firstLogin": true }});
     }
 });

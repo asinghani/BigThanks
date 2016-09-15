@@ -72,7 +72,7 @@ function trim(str){
     return str.trim().substring(0, str.trim().lastIndexOf(" "));
 }
 
-var resizeText = () => {
+/*var resizeText = () => {
 
     let itemRows = $(".purchase-item-row");
     itemRows.each(function (index) {
@@ -80,9 +80,6 @@ var resizeText = () => {
 
         cols.each(function (index) {
             let rows = getRows(this);
-            console.log(this.innerHTML);
-            console.log(rows);
-            console.log("----");
 
             if(rows < 2) this.innerHTML += "<br><br>";
             else if(rows < 3) this.innerHTML += "<br>";
@@ -102,11 +99,12 @@ var resizeText = () => {
         container: "body"
     });
 };
+*/
 
 Template.redeemCredits.onRendered(() => {
     $(window).resize(() => {
         Session.set("sizeChanged", $(window).width());
-        resizeText();
+        //resizeText();
     });
 
     /*let rows = $(".purchase-item-row");
@@ -118,5 +116,7 @@ Template.redeemCredits.onRendered(() => {
             console.log(desc);
         });
     });*/
-    Meteor.setTimeout(resizeText, 0);
+    $(document).ready(() => {
+        //Meteor.setTimeout(resizeText, 0);
+    });
 });

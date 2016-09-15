@@ -141,11 +141,24 @@ Template.organizationAccounts.events({
             $("#feedbackIcon").removeClass("fa-check").addClass("fa-times");
             $(".add-btn").attr("disabled", "true");
         }
+    }, "change #email"(event){
+        if(validEmail.exec($("#email").val())){
+            $("#emailGroup").removeClass("has-error").addClass("has-success");
+            $("#feedbackIcon").removeClass("fa-times").addClass("fa-check");
+            $(".add-btn").removeAttr("disabled");
+        } else {
+            $("#emailGroup").removeClass("has-success").addClass("has-error");
+            $("#feedbackIcon").removeClass("fa-check").addClass("fa-times");
+            $(".add-btn").attr("disabled", "true");
+        }
     }, "click .add-btn"(event){
-        Meteor.call("organization.user.add", $("#email").val(), () => {
+        Meteor.call("organization.user.add", $("#email").val(), $("#nameInput").val(), (err) => {
             accountsDep.changed();
             renderId++;
             $("#email").val("");
+            if(err){
+                swal("Error", "An error occurred and the user could not be added. Please try again later.", "error");
+            }
         });
     }
 });

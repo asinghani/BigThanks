@@ -125,30 +125,41 @@ Meteor.methods({
      *
      * Required Permission: Organization Admin
      */
-    "organization.user.add"(email){
+    "organization.user.add"(email, name){
 
         if (!email) {
             throw new Meteor.Error("invalid-args");
         }
+
+        if(!name || name.length == 0) {
+            name = email.split("@")[0];
+        }
+
+        if (!Meteor.userId() || !Roles.userIsInRole(Meteor.userId(), "organization_admin")) {
+            throw new Meteor.Error("not-authorized");
+        }
+
+        Accounts.createUser({
+            email: email,
+            profile: {
+                name: name,
+                organization: Meteor.user().profile.organization,
+                firstLogin: true
+            }
+        });
 
         let id = Accounts.findUserByEmail(email)._id;
 
         if (!id) {
             throw new Meteor.Error("invalid-args");
         }
-        if (!Meteor.userId() || !Roles.userIsInRole(Meteor.userId(), "organization_admin")) {
-            throw new Meteor.Error("not-authorized");
-        }
+
+        Accounts.sendEnrollmentEmail(id);
 
         let user = Meteor.users.find({_id: id}).fetch()[0];
         if (!user || !user.profile) {
             throw new Meteor.Error("invalid-args");
         }
-
-        Meteor.users.update({ _id: id}, {$set: {
-            "profile.organization": Meteor.user().profile.organization,
-            "profile.firstLogin": true
-        }});
 
         Organizations.update({ _id: new Mongo.ObjectID(Meteor.user().profile.organization) }, {$push: {
             users: id

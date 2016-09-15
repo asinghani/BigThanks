@@ -74,3 +74,4 @@ autopublish@1.0.7
 meteorhacks:ssr
 meteorhacks:kadira
 shell-server
+aldeed:template-extension

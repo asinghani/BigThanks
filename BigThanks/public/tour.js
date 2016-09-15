@@ -39,7 +39,7 @@ $(function (){
             {
                 title: "Volunteer Opportunities Page",
                 content: "On the volunteer opportunities page, you can find volunteer opportunities to sign up for.",
-                path: "/volunteer-opportunities",
+                path: "/user/volunteer-opportunities",
                 backdrop: true,
                 orphan: true,
                 onShown: function () {
@@ -53,7 +53,7 @@ $(function (){
                 element: ".volunteer-opportunity-table",
                 title: "Volunteer Opportunities List",
                 content: "This list shows all available volunteer opportunities. To sign up, contact the organizer using the email address they have provided.",
-                path: "/volunteer-opportunities",
+                path: "/user/volunteer-opportunities",
                 placement: "auto top",
                 backdrop: true
             },
@@ -62,7 +62,7 @@ $(function (){
                 element: "#map-group",
                 title: "Volunteer Opportunities Map",
                 content: "With this map, you can search for potential volunteer opportunities near you.",
-                path: "/volunteer-opportunities",
+                path: "/user/volunteer-opportunities",
                 placement: "auto bottom",
                 backdrop: true
             },
