@@ -34,25 +34,25 @@ export default () => {
         triggersEnter: [
             (ctx, redirect) => {
                 var route;
-                /*if (!(Meteor.loggingIn() || Meteor.userId())) {
+                if (!(Meteor.loggingIn() || Meteor.userId())) {
                     route = FlowRouter.current();
                     if (route.route.name !== "login") {
                         Session.set("redirectAfterLogin", route.path);
                     }
                     redirect("/sign-in");
-                }*/
+                }
             }
         ]
     });
 
-    FlowRouter.route("/dashboard", {
+    routes.route("/dashboard", {
         action() {
             FlowRouter.redirect("/");
         },
         name: "dashboardAlt"
     });
 
-    FlowRouter.route("/", {
+    routes.route("/", {
         action() {
             BlazeLayout.render("dashboard");
         },

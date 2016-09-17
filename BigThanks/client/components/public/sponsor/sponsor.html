@@ -1,0 +1,59 @@
+<template name="sponsor">
+    <p>
+        Sponsors can support the county by offering some items such as coupons, gift-cards, etc.
+    </p>
+    <p>
+        Fill out the form below to contact a Big Thanks administrator to sponsor items in exchange for promoting your brand and helping the community.
+    </p>
+    <br>
+
+    <div class="well well-sm">
+        <div class="alert alert-danger" id="fill-all" style="display:none;" role="alert">
+            Please fill all fields to continue.
+        </div>
+        <form class="ui large form" action="#" id="sponsorForm" style="margin: 0;">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="name">
+                            Name
+                        </label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="organizationName">
+                            Company Name
+                        </label>
+                        <input type="text" class="form-control" id="companyName">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">
+                            Company Website
+                        </label>
+                        <input type="text" class="form-control" id="websiteURL">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">
+                            Email Address
+                        </label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">
+                            Message
+                        </label>
+                        <textarea id="message" class="form-control" rows="6" cols="25"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button id="submit-btn" class="at-btn submit btn btn-primary btn-outline pull-right" type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</template>

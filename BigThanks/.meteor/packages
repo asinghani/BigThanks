@@ -75,3 +75,4 @@ meteorhacks:ssr
 meteorhacks:kadira
 shell-server
 aldeed:template-extension
+force-ssl

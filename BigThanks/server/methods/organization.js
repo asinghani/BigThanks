@@ -214,5 +214,166 @@ Meteor.methods({
                 _id: reqId
             }
         }});
+    },
+
+    "organization.request.submit" (name, organizationName, email, website, message) {
+        let confirmation = `
+            Your request for your organization to join Big Thanks has been submitted.
+            You will recieve further instructions in 3-5 business days after an admin reviews your information.
+            <h3>Submitted Information:</h3>
+            <hr>
+            <span style="font-weight:bold;">Name</span>
+            <br>
+            ${name}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Organization Name</span>
+            <br>
+            ${organizationName}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Email</span>
+            <br>
+            ${email}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Website</span>
+            <br>
+            <a href="${website}">${website}</a>
+            <br>
+            <br>
+            <span style="font-weight:bold;">Message</span>
+            <br>
+            ${message}
+            <br>
+            <br>
+        `;
+
+        let emailMsg = `
+            An organization join request was submitted
+            <h3>Submitted Information:</h3>
+            <hr>
+            <span style="font-weight:bold;">Name</span>
+            <br>
+            ${name}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Organization Name</span>
+            <br>
+            ${organizationName}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Email</span>
+            <br>
+            ${email}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Website</span>
+            <br>
+            <a href="${website}">${website}</a>
+            <br>
+            <br>
+            <span style="font-weight:bold;">Message</span>
+            <br>
+            ${message}
+            <br>
+            <br>
+        `;
+
+        Email.send({
+            from: Meteor.settings.private.email.no_reply,
+            to: email,
+            replyTo: Meteor.settings.private.email.contact,
+            subject: "Big Thanks organization join request submitted",
+            html: confirmation
+        });
+
+        Email.send({
+            from: name+" <"+email+">",
+            to: Meteor.settings.private.email.contact,
+            replyTo: email,
+            subject: "Organization Join Form: "+organizationName,
+            html: emailMsg
+        });
+    },
+
+    "sponsor.request.submit" (name, companyName, email, website, message) {
+        let confirmation = `
+            Big Thanks sponsor form has been submitted. An admin will review this information and respond within 3-5 days.
+            <h3>Submitted Information:</h3>
+            <hr>
+            <span style="font-weight:bold;">Name</span>
+            <br>
+            ${name}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Company Name</span>
+            <br>
+            ${companyName}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Email</span>
+            <br>
+            ${email}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Website</span>
+            <br>
+            <a href="${website}">${website}</a>
+            <br>
+            <br>
+            <span style="font-weight:bold;">Message</span>
+            <br>
+            ${message}
+            <br>
+            <br>
+        `;
+
+        let emailMsg = `
+            A sponsor join request was submitted
+            <h3>Submitted Information:</h3>
+            <hr>
+            <span style="font-weight:bold;">Name</span>
+            <br>
+            ${name}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Company Name</span>
+            <br>
+            ${companyName}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Email</span>
+            <br>
+            ${email}
+            <br>
+            <br>
+            <span style="font-weight:bold;">Website</span>
+            <br>
+            <a href="${website}">${website}</a>
+            <br>
+            <br>
+            <span style="font-weight:bold;">Message</span>
+            <br>
+            ${message}
+            <br>
+            <br>
+        `;
+
+        Email.send({
+            from: Meteor.settings.private.email.no_reply,
+            to: email,
+            replyTo: Meteor.settings.private.email.contact,
+            subject: "Big Thanks sponsor form submitted",
+            html: confirmation
+        });
+
+        Email.send({
+            from: name+" <"+email+">",
+            to: Meteor.settings.private.email.contact,
+            replyTo: email,
+            subject: "Big Thanks Sponsor Form: "+companyName,
+            html: emailMsg
+        });
     }
 });

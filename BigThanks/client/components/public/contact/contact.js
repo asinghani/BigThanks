@@ -17,7 +17,11 @@ Template.contact.events({
 
         $("#submit-btn").removeClass("btn-outline").html(spinner+" Submitting...").attr("disabled", "false");
 
-        Meteor.call("contact.submit", form.name.value, form.email.value, form.subject.value, form.message.value, () => {
+        Meteor.call("contact.submit", form.name.value, form.email.value, form.subject.value, form.message.value, (err) => {
+            if(err){
+                swal("Error", "An internal error has occurred. Please try again later", "error");
+                return;
+            }
             swal("Submitted", "The contact form has been submitted. You will receive an email confirmation soon, and a reply in 1-2 business days.",
                 "success");
 
@@ -33,7 +37,7 @@ Template.contact.events({
 });
 
 var email = "Y29udGFjdA==";
-var email2 = "YW5pc2hzaW5naGFuaS5jb20=";
+var email2 = "YmlndGhhbmtzLmlv";
 
 Template.contact.onRendered(() => {
     Meteor.setTimeout(() => {

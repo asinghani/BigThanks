@@ -1,5 +1,5 @@
 export default () => {
-    Accounts.config({
+    AccountsTemplates.configure({
         forbidClientAccountCreation : true
     });
 };
