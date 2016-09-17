@@ -1,0 +1,65 @@
+<template name="adminDashboard">
+
+    <div class="transparent-nav">
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand page-scroll" style="font-weight: bold; text-transform: uppercase;" href="/">Big Thanks</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="{{isActiveRoute 'home'}}"><a href="/">Home</a></li>
+                        <li class="{{isActiveRoute 'adminItems'}}"><a href="/admin/items">Items</a></li>
+                        <li class="{{isActiveRoute 'adminOrganizations'}}"><a href="/admin/organizations">Organizations</a></li>
+
+                    </ul>
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="navbar-spacer">_</li>
+                        <li>
+                            <button id="logout" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Out</button>
+                        </li>
+                        <li class="navbar-spacer">_</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div style="background-image: url(/images/header.jpg); min-height:200px; padding-top:70px;">
+        <div class="container">
+            <h1 class="top-heading">
+                {{attr.title}}
+                <br>
+                <small class="top-subheading">
+                    {{attr.subtitle}}
+                </small>
+            </h1>
+        </div>
+    </div>
+    <div class="container" style="padding-top: 25px;">
+        {{> Template.dynamic template=content}}
+    </div>
+
+    <!--
+    <div class="container" style="padding-top:20px">
+        <h1>Big Thanks Admin Dashboard</h1>
+        <hr>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="/">Big Thanks Home</a></li>
+            <li role="presentation" class="active"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Items</a></li>
+            <li role="presentation"><a href="#organizations" aria-controls="organizations" role="tab" data-toggle="tab">Organizations</a></li>
+            <li role="presentation" class="pull-right"><a href="/sign-out">Log Out</a></li>
+        </ul>
+
+        <div class="tab-content" style="padding-top:40px">
+            <div role="tabpanel" class="tab-pane active" id="items">{{> itemsPage}}</div>
+            <div role="tabpanel" class="tab-pane" id="organizations">{{> organizationsPage}}</div>
+        </div>
+    </div>-->
+</template>

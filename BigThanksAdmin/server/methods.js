@@ -1,5 +1,7 @@
 const validEmail = /.+@.+/;
 
+import { Organizations, Items } from "/imports/collections.js";
+
 Meteor.methods({
     "organization.add" (organizationName, website, adminName, email) {
         if (!organizationName || !website || !adminName || !email) {
@@ -14,13 +16,18 @@ Meteor.methods({
             throw new Meteor.Error("not-authorized");
         }
 
-        Accounts.createUser({
-            email: email,
-            profile: {
-                name: adminName,
-                firstLogin: true
-            }
-        });
+        try {
+
+            Accounts.createUser({
+                email: email,
+                profile: {
+                    name: adminName,
+                    firstLogin: true
+                }
+            });
+        }catch(err){
+            if(err.reason.indexOf("Email already exists") == -1) return;
+        }
 
         let id = Accounts.findUserByEmail(email)._id;
 

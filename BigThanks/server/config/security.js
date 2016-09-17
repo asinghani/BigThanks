@@ -19,6 +19,8 @@ export default (BrowserPolicy) => {
     BrowserPolicy.content.allowConnectOrigin("ws://bigthanks.dev");
     BrowserPolicy.content.allowConnectOrigin("wss://bigthanks.dev");
     BrowserPolicy.content.allowConnectOrigin("https://enginex.kadira.io");
+    BrowserPolicy.content.allowConnectOrigin("https://bigthanksuploads.s3.amazonaws.com");
+    BrowserPolicy.content.allowConnectOrigin("https://bigthanksuploads.s3-us-west-1.amazonaws.com/");
 
     BrowserPolicy.content.allowImageOrigin("*"); // Allow organization logos
 };

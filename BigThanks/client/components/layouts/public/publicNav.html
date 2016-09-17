@@ -27,15 +27,17 @@
                             <a href="/contact">Contact</a>
                         </li>
                         <li class="navbar-spacer">___</li>
-                        <li class="{{isActiveRoute 'atSignIn'}}">
-                            {{#if $not currentUser}}
-                                <a href="/user/dashboard" style="display:inline;">Sign In</a>
-                                <button id="signUp" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Up</button>
-                                {{else}}
-                                <a href="/user/dashboard" style="display:inline;">Dashboard</a>
-                                <button id="logout" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Out</button>
-                            {{/if}}
-                        </li>
+
+                        {{#if $not currentUser}}
+                            <li class="{{isActiveRoute 'atSignIn'}}">
+                                <a href="/user/dashboard">Sign In</a>
+                            </li>
+                            <li><button id="signUp" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Up</button></li>
+                        {{else}}
+                            <li><a href="/user/dashboard">Dashboard</a></li>
+                            <li><button id="logout" class="btn btn-signup btn-primary btn-sm btn-rounded navbar-btn btn-bold">Sign Out</button></li>
+                        {{/if}}
+
                         <li class="navbar-spacer">_</li>
                     </ul>
                 </div>

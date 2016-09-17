@@ -1,0 +1,105 @@
+<template name="itemsPage">
+    <a href="#" class="btn btn-primary" id="addBtn">Add New Item</a>
+    {{> reactiveTable settings=itemsTable}}
+
+    <!-- Add/Edit dialog box -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="editModal">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Add/Edit an Item</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-danger" id="fill-all" role="alert">
+                        Please fill all fields with valid values to continue.
+                    </div>
+                    <br>
+
+                    <form class="form-horizontal" data-toggle="validator">
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Item Name
+                            </label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Item Description
+                            </label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="desc" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Sponsor
+                            </label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="sponsor">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Cost
+                            </label>
+                            <div class="col-sm-8">
+                                <input class="form-control" type="number" id="cost">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Website
+                            </label>
+                            <div class="col-sm-8">
+                                <input class="form-control" id="website">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Image URL (png or jpg)
+                            </label>
+                            <div class="col-sm-8">
+                                <!--<input class="form-control" id="image">-->
+                                <input type="file" class="form-control" id="imagePicker">
+                                <img src="" style="width: 250px; height: 200px; display: none; object-fit:contain;" id="imagePreview">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Redeem Instructions
+                            </label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="instructions" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">
+                                Redeem Codes (one per line)
+                            </label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" id="codes" rows="4"></textarea>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary save-btn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

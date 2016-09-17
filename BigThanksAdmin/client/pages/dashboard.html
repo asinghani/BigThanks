@@ -1,3 +1,7 @@
+<template name="dashboardNeedsLogin">
+    {{> ensureSignedIn template="dashboard"}}
+</template>
+
 <template name="dashboard">
     <div class="container" style="padding-top:20px">
         <h1>Big Thanks Admin Dashboard</h1>
@@ -5,6 +9,7 @@
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active"><a href="#items" aria-controls="items" role="tab" data-toggle="tab">Items</a></li>
             <li role="presentation"><a href="#organizations" aria-controls="organizations" role="tab" data-toggle="tab">Organizations</a></li>
+            <li role="presentation" class="pull-right"><a href="/sign-out">Log Out</a></li>
         </ul>
 
         <div class="tab-content" style="padding-top:40px">

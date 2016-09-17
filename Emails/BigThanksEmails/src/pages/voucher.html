@@ -1,0 +1,53 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+
+    .header {
+        background: #f3f3f3;
+    }
+</style>
+
+<container>
+
+    <row class="header">
+        <columns>
+
+            <spacer size="16"></spacer>
+
+            <h6 class="text">Below is the e-voucher for the {{{{raw}}}}{{item}}{{{{/raw}}}} you purchased on Big Thanks</h6>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <spacer size="32"></spacer>
+
+            <h1 class="text">{{{{raw}}}}{{item}}{{{{/raw}}}}</h1>
+
+            <spacer size="16"></spacer>
+
+            <p class="text">
+                <b>To redeem this item: </b>
+                {{{{raw}}}}{{instructions}}{{{{/raw}}}}
+            </p>
+
+            <h3 class="text">Credits Spent: {{{{raw}}}}{{cost}}{{{{/raw}}}}</h3>
+
+        </columns>
+    </row>
+    <row>
+        <columns>
+            <p>
+                <img class="float-right" src="{{{{raw}}}}{{barcode}}{{{{/raw}}}}">
+            </p>
+        </columns>
+    </row>
+    <p class="text-right" style="padding-right: 50px;">{{{{raw}}}}{{code}}{{{{/raw}}}}</p>
+
+
+    <spacer size="16"></spacer>
+    <hr/>
+    <p><small>&nbsp;&nbsp;This item was sponsored by <a href="{{{{raw}}}}{{url}}{{{{/raw}}}}">{{{{raw}}}}{{sponsor}}{{{{/raw}}}}</a></small></p>
+</container>

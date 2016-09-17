@@ -50,7 +50,7 @@ export default () => {
 
     publicRoutes.route("/contact", {
         action() {
-            if(!Meteor.user()){
+            if(!Meteor.user() || Roles.userIsInRole(Meteor.user(), "admin")){
                 BlazeLayout.render("publicLayout", {
                     content: "contact",
                     attr: {

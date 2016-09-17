@@ -31,7 +31,6 @@ insecure@1.0.7
 
 # Community Packages
 
-aldeed:collection2
 kadira:blaze-layout
 natestrauser:animate-css
 dburles:collection-helpers
@@ -76,3 +75,4 @@ meteorhacks:kadira
 shell-server
 aldeed:template-extension
 force-ssl
+edgee:slingshot

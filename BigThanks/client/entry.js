@@ -2,6 +2,8 @@ import createAccountsRoutes from "../universal/routes/accounts.js";
 import createUserRoutes from "../universal/routes/user.js";
 import createOrganizationRoutes from "../universal/routes/organization.js";
 import createPublicRoutes from "../universal/routes/public.js";
+import createAdminRoutes from "../universal/routes/admin.js";
+
 import setupAccounts from "../universal/config/accounts.js";
 
 FlowRouter.wait();
@@ -22,6 +24,7 @@ createAccountsRoutes();
 createUserRoutes();
 createOrganizationRoutes();
 createPublicRoutes();
+createAdminRoutes();
 
 AccountsTemplates._init();
 

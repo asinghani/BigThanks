@@ -30,7 +30,6 @@ export default () => {
     });
 
     var routes = FlowRouter.group({
-        prefix: "/user",
         triggersEnter: [
             (ctx, redirect) => {
                 var route;
@@ -54,7 +53,7 @@ export default () => {
 
     routes.route("/", {
         action() {
-            BlazeLayout.render("dashboard");
+            BlazeLayout.render("dashboardNeedsLogin");
         },
         name: "dashboard"
     });

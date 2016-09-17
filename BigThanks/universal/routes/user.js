@@ -12,6 +12,8 @@ export default () => {
                     redirect("/sign-in");
                 } else if (Roles.userIsInRole(Meteor.userId(), "organization")) {
                     redirect("/organization/dashboard");
+                } else if (Roles.userIsInRole(Meteor.userId(), "admin")) {
+                    redirect("/admin/items");
                 }
             }
         ]

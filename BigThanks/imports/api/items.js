@@ -30,32 +30,72 @@ if(Meteor.isServer) {
 
             let url = generateBarcode(code);
 
-            let emailMsg = `
-                Below is your e-voucher for the ${item.name} that you purchased on Big Thanks
-                <hr>
-                <span style="font-weight:bold;">Credits Spent: </span>
-                ${item.cost}
-                <br>
-                <br>
-                <span style="font-weight:bold;">Code: </span>
-                ${code}
-                <br>
-                <img src="${url}">
-                <br>
-                <br>
-                This item was sponsored by <a href="${item.website}">${item.sponsor}</a>
-                <br>
-                <br>
-                Please do not reply to this email
-            `;
+            let emailMsg = SSR.render("voucher", {
+                item: item.name,
+                instructions: item.instructions,
+                cost: item.cost,
+                code: code,
+                barcode: url,
+                sponsor: item.sponsor,
+                url: item.website
+            });
 
 
             Email.send({
                 from: Meteor.settings.private.email.no_reply,
                 to: Meteor.user().emails[0].address,
-                subject: "Big Thanks: Your "+item.name,
+                subject: "Big Thanks: E-voucher for your "+item.name,
                 html: emailMsg
             });
+        }, "item.add"(name, desc, sponsor, cost, website, image, instructions, codes) {
+            if (!Meteor.userId() || !Roles.userIsInRole(Meteor.userId(), "admin")) {
+                throw new Meteor.Error("not-authorized");
+            }
+
+            if (!name || !desc || !sponsor || !cost || !website || !image || !instructions) {
+                throw new Meteor.Error("invalid-args");
+            }
+
+            let codesArray = codes.split("\n");
+            let stock = codesArray.length;
+
+            Items.insert({
+                _id: new Mongo.ObjectID(),
+                name: name,
+                desc: desc,
+                sponsor: sponsor,
+                cost: cost,
+                website: website,
+                image: image,
+                instructions: instructions,
+                codes: codesArray,
+                stock: stock
+            });
+        }, "item.delete"(id) {
+            Items.remove({_id : new Mongo.ObjectID(id)});
+        }, "item.edit"(id, name, desc, sponsor, cost, website, image, instructions, codes) {
+            if (!Meteor.userId() || !Roles.userIsInRole(Meteor.userId(), "admin")) {
+                throw new Meteor.Error("not-authorized");
+            }
+
+            if (!id || !name || !desc || !sponsor || !cost || !website || !image || !instructions) {
+                throw new Meteor.Error("invalid-args");
+            }
+
+            let codesArray = codes.split("\n");
+            let stock = codesArray.length;
+
+            Items.update({ _id: new Mongo.ObjectID(id) }, {$set: {
+                name: name,
+                desc: desc,
+                sponsor: sponsor,
+                cost: cost,
+                website: website,
+                image: image,
+                instructions: instructions,
+                codes: codesArray,
+                stock: stock
+            }});
         }
     });
 

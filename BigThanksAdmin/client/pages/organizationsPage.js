@@ -69,12 +69,15 @@ Template.organizationsPage.events({
 
         Meteor.call("organization.add", organizationName, website, adminName, email, (err) => {
             if(err){
-                swal("Error Occurred", "An internal error occurred while completing this action", "error");
+                console.error(err);
+                swal("Error Occurred", "An internal error occurred while completing this action. " +
+                    "Please confirm that all information is correct and that this is not a repeated submission.", "error");
                 $(".form-control").removeAttr("disabled");
                 return;
             }
             swal("Success", "Successfully added this organization.", "success");
             $(".form-control").removeAttr("disabled");
+            $("#addModal").modal("hide");
         });
     }
 });
