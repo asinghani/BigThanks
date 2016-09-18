@@ -57,6 +57,7 @@ Template.itemsPage.helpers({
 
 Template.itemsPage.events({
     "click #addBtn"(event) {
+        EditId = undefined;
         $(".form-control").removeAttr("disabled").val("");
         $("#invalid-email").css("display", "none");
         $("#fill-all").css("display", "none");
@@ -103,7 +104,7 @@ Template.itemsPage.events({
         uploader.send(event.target.files[0], (err, url) => {
             $(".save-btn").removeAttr("disabled").html("Save");
             if (err) {
-                swal("Error Occurred", "An error has occurred while trying to upload the image. Please try again later.", "error");
+                swal("Error", "This image could not be uploaded. Only .jpg and .png file formats are supported.", "error");
             } else {
                 Session.set("imageUrl", url);
                 $("#imagePreview").attr("src", url).css("display", "block");
@@ -157,6 +158,7 @@ Template.itemsPage.events({
                 swal("Success", "Successfully edited the item.", "success");
                 $(".form-control").removeAttr("disabled");
                 $("#editModal").modal("hide");
+                EditId = undefined;
                 Session.set("imageUrl", undefined);
             });
 
@@ -190,6 +192,7 @@ Template.itemsPage.events({
                 swal("Success", "Successfully added the item.", "success");
                 $(".form-control").removeAttr("disabled");
                 $("#editModal").modal("hide");
+                EditId = undefined;
                 Session.set("imageUrl", undefined);
             });
         }

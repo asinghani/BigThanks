@@ -197,7 +197,7 @@ function renderMap(data){
 
     if(!map){
         L.Icon.Default.imagePath = "/images/map/markers";
-        map = L.map("opportunityMap").setView([37.7749, -122.4194], 13);
+        map = L.map("opportunityMap").setView([37.5630, -122.3255], 13);
 
         satelliteLayer = new L.Google("hybrid");
         map.addLayer(satelliteLayer);

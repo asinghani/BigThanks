@@ -7,7 +7,8 @@
     "dev": "meteor --port=3000 --settings settings.json",
     "https": "(sudo nginx -s stop; sudo nginx -c nginx.conf ) & meteor npm run dev ",
     "start": "sudo meteor npm run dev",
-    "dev:debug": "sudo meteor --port=3000 --settings settings.json"
+    "dev:debug": "sudo meteor --port=3000 --settings settings.json",
+    "ios": "meteor run ios --port=3000 --settings settings.json"
   },
   "repository": {
     "type": "git",

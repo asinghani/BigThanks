@@ -103,6 +103,9 @@ if(Meteor.isServer) {
     var barcodeGenerate = Npm.require("barcode");
     AWS.config.region = "us-west-2";
 
+    AWS.config.update({accessKeyId: Meteor.settings.AWSAccessKeyId, secretAccessKey: Meteor.settings.AWSSecretAccessKey});
+
+
     var generateBarcode = function (code) {
         let barcode = barcodeGenerate("code39", {
             data: code+"",

@@ -22,9 +22,9 @@ Meteor.startup(() => {
 
     Accounts.emailTemplates.enrollAccount.subject = () => { return "Invitation to join your organization on Big Thanks"; };
     Accounts.emailTemplates.enrollAccount.html = (user, url) => {
-        var o = "l";
+        var o = "";
         try {
-            o = Organizations.find({_id: user.profile.organization}).fetch()[0];
+            o = Organizations.find({_id: new Mongo.ObjectID(user.profile.organization)}).fetch()[0].name;
         } catch (err) {
             console.error(err);
         }
